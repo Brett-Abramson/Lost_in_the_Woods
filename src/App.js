@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from "react"
+import PORT from ".../project_3_backend/server.js"
 
-function App() {
+const App = () => {
+  const [camps, setCamps] = useState([])
+  
+  
+  const getCamps = () => {
+    // axios.get(PORT + "/camping")
+    axios.get("localhost:3000/camping").then((response) => {
+      setCamps(response.data)
+    })
+  }
+  const handleCreateCamp = (data) => {
+    axios.post("http://localhost:3000/camping", data).then((response) => {
+      console.log(response);
+      let newCamps = [...camps, response.data]
+      setCamps(newCamps)
+    })
+  }
+  
+  
+
+  useEffect(() => {
+    getCamps()
+  }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h1>Lost in the Woods</h1>
+    </>
+  )
 }
+
 
 export default App;
