@@ -1,6 +1,7 @@
 import './App.css';
 import {useState, useEffect} from "react"
-import PORT from ".../project_3_backend/server.js"
+// import PORT from ".../project_3_backend/server.js"
+import axios from "axios"
 
 const App = () => {
   const [camps, setCamps] = useState([])
