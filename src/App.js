@@ -22,7 +22,25 @@ const App = () => {
       setCamps(newCamps)
     })
   }
-  
+  const handleDeleteCamp = (deletedCamp) => {
+    axios.delete("http://localhost:3000/camping/" + deletedCamp._id)
+    .then((response) => {
+      let newCamps = camps.filter((camp) => {
+        return camp._id !== deletedCamp._id
+      })
+      setHikes(newCamps)
+    })
+  }
+  const handleEditCamp = (data) => {
+    axios.put("http://localhost:3000/camping/" + data._id, data)
+    .then((response) => {
+      console.log(response)
+      let newCamp = camps.map((camp) => {
+        return camp._id !== data._id ? camp : data
+      })
+      setCamps(newCamp)
+    })
+  }
 
   /// === HIKING  ===
   const [hikes, setHikes] = useState([])
@@ -65,6 +83,7 @@ const App = () => {
 
   useEffect(() => {
     getCamps()
+    getHikes()
   }, [])
   
   return (
