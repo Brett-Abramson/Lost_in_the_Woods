@@ -40,7 +40,7 @@ const Add = (props) => {
 
 
               <label htmlFor="commentSection">Comments </label>
-              <input type="" name="commentSection" onChange={handleChange} />
+              <input type="" name="commentSection" placeholder="What was the hike like? What should other hikers know about the trail?" onChange={handleChange} />
 {/* add radios with the booleans here */}
 
               <label htmlFor="photo">Photo: </label>
