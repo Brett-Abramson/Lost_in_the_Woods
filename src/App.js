@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 import axios from "axios"
 import Camp from "./components/camping/camp"
 import Hike from "./components/hiking/show"
+import Home from"./components/home"
 
 const App = () => {
   //  === CAMPING ===
@@ -94,8 +95,10 @@ const testing = () =>{
 
   return (
     <>
-      <h1>Lost in the Woods</h1>
-      <button onClick={testing}>Testing</button>
+      <>
+        <Home />
+      </>
+      {/* <button onClick={getCamps}>Testing</button>
       {camps.map((camp) => {
         return (
           <>
@@ -109,7 +112,7 @@ const testing = () =>{
             <Hike hikes={hikes} />
           </>
         )
-      })}
+      })} */}
     </>
   )
 }
