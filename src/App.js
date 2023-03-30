@@ -2,6 +2,7 @@ import './App.css';
 import {useState, useEffect} from "react"
 // import PORT from ".../project_3_backend/server.js"
 import axios from "axios"
+import Camp from "./components/camping/camp"
 
 const App = () => {
   const [camps, setCamps] = useState([])
@@ -34,7 +35,7 @@ const App = () => {
       <button onClick={getCamps}>Testing</button>
       {camps.map((camp) => {
         return (
-          <li>Camp Name: {camp.name}</li>
+          <Camp camp={camp} />
         )
       })}
     </>
