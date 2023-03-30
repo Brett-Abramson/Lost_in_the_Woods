@@ -98,7 +98,7 @@ const testing = () =>{
       <>
         <Home />
       </>
-      {<button onClick={getCamps}>Testing</button>
+      {<button onClick={getCamps}>Testing</button>}
       {camps.map((camp) => {
         return (
           <>
