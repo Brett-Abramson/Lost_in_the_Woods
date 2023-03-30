@@ -83,8 +83,8 @@ const App = () => {
   
 
   useEffect(() => {
-    getCamps()
-    getHikes()
+    getCamps();
+    getHikes();
   }, [])
   
 const testing = () =>{
@@ -112,7 +112,7 @@ const testing = () =>{
             <Hike hikes={hikes} />
           </>
         )
-      })}}
+      })}
     </>
   )
 }
