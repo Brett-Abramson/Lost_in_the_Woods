@@ -11,9 +11,9 @@ const Home = () => {
                     <h2>Lost in the woods</h2>
                 </div>
                 <div className="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#">Hiking</a>
-                    <a href="#">Camping</a>
+                    <a href="#"><h3>Home</h3></a>
+                    <a href="#"><h3>Hiking</h3></a>
+                    <a href="#"><h3>Camping</h3></a>
                 </div>
             </div>
             <main>
@@ -31,6 +31,7 @@ const Home = () => {
                     <div className="home-section-descriptions">
                         <h3>Find hikes for all skill levels</h3>
                         <p>From walks along the river to backpacking trips</p>
+                        <br/>
                         <h3>Camping styles for everyone</h3>
                         <p>Glamping to cowboy camping, we've got you covered</p>
                     </div>
