@@ -66,17 +66,30 @@ const App = () => {
 
   useEffect(() => {
     getCamps()
+    getHikes()
   }, [])
   
+const testing = () =>{
+  getHikes()
+
+
+}
+
   return (
     <>
       <h1>Lost in the Woods</h1>
-      <button onClick={getCamps}>Testing</button>
-      {camps.map((camp) => {
+      <button onClick={testing}>Testing</button>
+      {/* {camps.map((camp) => {
         return (
           <>
           <Camp camp={camp} />
-          <Hike hikes={hikes} />
+          </>
+        )
+      })} */}
+      {hikes.map((hikes) => {
+        return (
+          <>
+            <Hike hikes={hikes} />
           </>
         )
       })}
