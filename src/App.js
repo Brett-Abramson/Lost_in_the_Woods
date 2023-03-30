@@ -3,6 +3,8 @@ import {useState, useEffect} from "react"
 // import PORT from ".../project_3_backend/server.js"
 import axios from "axios"
 import Camp from "./components/camping/camp"
+import Hike from "./components/hiking/show"
+import Home from"./components/home"
 
 const App = () => {
   //  === CAMPING ===
@@ -11,7 +13,8 @@ const App = () => {
   
   const getCamps = () => {
     axios.get("http://localhost:3000/camping")
-    .then((response) => setCamps(response.data), (err) => console.oog(err))
+    .then((response) => setCamps(response.data), 
+    (err) => console.log(err))
     .catch((error) => console.log(error))
     }
   
@@ -46,13 +49,11 @@ const App = () => {
   const [hikes, setHikes] = useState([])
 
   const getHikes = () => {
-    // axios.get(PORT + "/camping")
     axios.get("http://localhost:3000/hiking")
-    .then((response) => {
-      setCamps(response.data)
-      })
-    }
-  
+    .then((response) => setHikes(response.data), 
+    (err) => console.log(err))
+    .catch((error) => console.log(error))
+  }
   const handleCreateHike = (data) => {
     axios.post("http://localhost:3000/hiking", data).then((response) => {
       console.log(response);
@@ -86,15 +87,32 @@ const App = () => {
     getHikes();
   }, [])
   
+const testing = () =>{
+  getHikes()
+
+
+}
+
   return (
     <>
-      <h1>Lost in the Woods</h1>
-      <button onClick={getCamps}>Testing</button>
+      <>
+        <Home />
+      </>
+      {<button onClick={getCamps}>Testing</button>
       {camps.map((camp) => {
         return (
+          <>
           <Camp camp={camp} />
+          </>
         )
       })}
+      {hikes.map((hikes) => {
+        return (
+          <>
+            <Hike hikes={hikes} />
+          </>
+        )
+      })}}
     </>
   )
 }
