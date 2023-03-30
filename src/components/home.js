@@ -22,11 +22,11 @@ const Home = () => {
                         <h1>Let's go on an adventure</h1>
                     </div>
                     <div className="home-description">
-                        <h4 className="home-description-text">Use our community sourced hiking and camping guide to plan your next adventure.</h4>
+                        <p className="home-description-text">Use our community sourced hiking and camping guide to plan your next adventure.</p>
                     </div>
                     <div className="home-add-buttons">
-                        <button>Add Hike</button>
-                        <button>Add Camp</button>
+                        <button className="home-add-btns">Add Hike</button>
+                        <button className="home-add-btns">Add Camp</button>
                     </div>
                     <div className="home-section-descriptions">
                         <h3>Find hikes for all skill levels</h3>
