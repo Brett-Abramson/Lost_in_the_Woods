@@ -82,8 +82,8 @@ const App = () => {
   
 
   useEffect(() => {
-    getCamps()
-    getHikes()
+    getCamps();
+    getHikes();
   }, [])
   
   return (
