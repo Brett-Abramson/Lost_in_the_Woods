@@ -12,7 +12,8 @@ const App = () => {
   
   const getCamps = () => {
     axios.get("http://localhost:3000/camping")
-    .then((response) => setCamps(response.data), (err) => console.oog(err))
+    .then((response) => setCamps(response.data), 
+    (err) => console.log(err))
     .catch((error) => console.log(error))
     }
   
@@ -47,13 +48,11 @@ const App = () => {
   const [hikes, setHikes] = useState([])
 
   const getHikes = () => {
-    // axios.get(PORT + "/camping")
     axios.get("http://localhost:3000/hiking")
-    .then((response) => {
-      setCamps(response.data)
-      })
-    }
-  
+    .then((response) => setHikes(response.data), 
+    (err) => console.log(err))
+    .catch((error) => console.log(error))
+  }
   const handleCreateHike = (data) => {
     axios.post("http://localhost:3000/hiking", data).then((response) => {
       console.log(response);
@@ -97,13 +96,13 @@ const testing = () =>{
     <>
       <h1>Lost in the Woods</h1>
       <button onClick={testing}>Testing</button>
-      {/* {camps.map((camp) => {
+      {camps.map((camp) => {
         return (
           <>
           <Camp camp={camp} />
           </>
         )
-      })} */}
+      })}
       {hikes.map((hikes) => {
         return (
           <>
