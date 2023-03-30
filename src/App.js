@@ -3,7 +3,6 @@ import {useState, useEffect} from "react"
 // import PORT from ".../project_3_backend/server.js"
 import axios from "axios"
 import Camp from "./components/camping/camp"
-import Home from"./components/home"
 
 const App = () => {
   //  === CAMPING ===
@@ -12,7 +11,8 @@ const App = () => {
   
   const getCamps = () => {
     axios.get("http://localhost:3000/camping")
-    .then((response) => setCamps(response.data), (err) => console.oog(err))
+    .then((response) => setCamps(response.data), 
+    (err) => console.log(err))
     .catch((error) => console.log(error))
     }
   
@@ -23,19 +23,35 @@ const App = () => {
       setCamps(newCamps)
     })
   }
-  
+  const handleDeleteCamp = (deletedCamp) => {
+    axios.delete("http://localhost:3000/camping/" + deletedCamp._id)
+    .then((response) => {
+      let newCamps = camps.filter((camp) => {
+        return camp._id !== deletedCamp._id
+      })
+      setHikes(newCamps)
+    })
+  }
+  const handleEditCamp = (data) => {
+    axios.put("http://localhost:3000/camping/" + data._id, data)
+    .then((response) => {
+      console.log(response)
+      let newCamp = camps.map((camp) => {
+        return camp._id !== data._id ? camp : data
+      })
+      setCamps(newCamp)
+    })
+  }
 
   /// === HIKING  ===
   const [hikes, setHikes] = useState([])
 
   const getHikes = () => {
-    // axios.get(PORT + "/camping")
     axios.get("http://localhost:3000/hiking")
-    .then((response) => {
-      setCamps(response.data)
-      })
-    }
-  
+    .then((response) => setHikes(response.data), 
+    (err) => console.log(err))
+    .catch((error) => console.log(error))
+  }
   const handleCreateHike = (data) => {
     axios.post("http://localhost:3000/hiking", data).then((response) => {
       console.log(response);
@@ -66,15 +82,31 @@ const App = () => {
 
   useEffect(() => {
     getCamps()
+    getHikes()
   }, [])
   
+const testing = () =>{
+  getHikes()
+
+
+}
+
   return (
     <>
-      <Home />
+      <h1>Lost in the Woods</h1>
       <button onClick={getCamps}>Testing</button>
       {camps.map((camp) => {
         return (
+          <>
           <Camp camp={camp} />
+          </>
+        )
+      })}
+      {hikes.map((hikes) => {
+        return (
+          <>
+            <Hike hikes={hikes} />
+          </>
         )
       })}
     </>
