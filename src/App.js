@@ -9,10 +9,11 @@ const App = () => {
   
   const getCamps = () => {
     // axios.get(PORT + "/camping")
-    axios.get("localhost:3000/camping").then((response) => {
+    axios.get("http://localhost:3000/camping").then((response) => {
       setCamps(response.data)
-    })
-  }
+      })
+    }
+  
   const handleCreateCamp = (data) => {
     axios.post("http://localhost:3000/camping", data).then((response) => {
       console.log(response);
@@ -30,6 +31,12 @@ const App = () => {
   return (
     <>
       <h1>Lost in the Woods</h1>
+      <button onClick={getCamps}>Testing</button>
+      {camps.map((camp) => {
+        return (
+          <li>Camp Name: {camp.name}</li>
+        )
+      })}
     </>
   )
 }
