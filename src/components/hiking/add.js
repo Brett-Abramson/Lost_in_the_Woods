@@ -11,20 +11,20 @@ const AddHike = (props) => {
         elevationGain: "",
         routeType: "",
         mapIntigration: "",
-        tags: {
-            quick: false,
-            easy: false,
-            challenging: false,
-            petFriednly: false,
-            offLeash: false,
-            kidFriendly: false,
-            handicap: false,
-            wheelchair: false,
-            easeHead: false,
-            bathrooms: false,
-            water: false,
-            freePraking: false,
-        },
+        // tags: {
+        //     quick: false,
+        //     easy: false,
+        //     challenging: false,
+        //     petFriednly: false,
+        //     offLeash: false,
+        //     kidFriendly: false,
+        //     handicap: false,
+        //     wheelchair: false,
+        //     easeHead: false,
+        //     bathrooms: false,
+        //     water: false,
+        //     freePraking: false,
+        // },
         description:"",
         parkingDetails: "",
         comments: {
@@ -45,7 +45,7 @@ const AddHike = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleCreate(hike)
+        props.handleCreateHike(hike)
     }
 
     return (
@@ -159,11 +159,6 @@ const AddHike = (props) => {
                         <label htmlFor="Free Parking">Free Parking</label>
                     </div>
                 </div>
-                    <div className="comments">
-                        <label htmlFor="commentSection">Description</label>
-                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What hsould others know?" />
-                    </div>
-                
                 <button type="submit">Add Hike</button>
             </form>
         </>
