@@ -79,7 +79,7 @@ const AddHike = (props) => {
                 <input type="number" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
                 <br />
 
-                <fieldset>
+                <fieldset onChange={handleChange}>
                     <legend>How difficult was the hike?</legend> 
 
                     <label htmlFor="easy">Easy</label>
@@ -95,7 +95,7 @@ const AddHike = (props) => {
                     <br />
                 </fieldset>
 
-                <fieldset>
+                <fieldset onChange={handleChange}>
                     <legend>What kind of hike was it?</legend> 
 
                     <label htmlFor="thru-hike">Easy</label>
