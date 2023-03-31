@@ -9,9 +9,12 @@ const Hike = (props) => {
   const [hikeComment, setHikeComment] = useState([])
 
   const handleCreateHikeComment = (data) => {
-    axios.post("http://localhost:3000/hiking", data).then((response) => {
+    axios.put("http://localhost:3000/hiking/" + data._id, data)
+    .then((response) => {
       console.log(response);
-      let newHikeComment = [...props.hikeComment, response.data]
+      let newHikeComment = hikeComment.map((hike) => {
+        return hike._id !== data._id ? hike : data
+      })
       setHikeComment(newHikeComment)
     })
   }
@@ -55,7 +58,7 @@ const Hike = (props) => {
 
           <div className="map">{/* spot holder for the map integration */}</div>
 
-          {/* <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} /> */}
+          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} />
 {/* {props.hikeComment((sub) =>
 <> */}
           {/* <div className="comment-section"> */}
