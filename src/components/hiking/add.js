@@ -11,29 +11,29 @@ const AddHike = (props) => {
         elevationGain: "",
         routeType: "",
         mapIntigration: "",
-        tags: {
-            quick: false,
-            easy: false,
-            challenging: false,
-            petFriednly: false,
-            offLeash: false,
-            kidFriendly: false,
-            handicap: false,
-            wheelchair: false,
-            easeHead: false,
-            bathrooms: false,
-            water: false,
-            freePraking: false,
-        },
+        // tags: [{
+        //     quick: false,
+        //     easy: false,
+        //     challenging: false,
+        //     petFriednly: false,
+        //     offLeash: false,
+        //     kidFriendly: false,
+        //     handicap: false,
+        //     wheelchair: false,
+        //     easeHead: false,
+        //     bathrooms: false,
+        //     water: false,
+        //     freeParking: false,
+        // }],
         description:"",
         parkingDetails: "",
-        comments: {
-            photo: "",
-            name: "",
-            duration: "",
-            weather: "",
-            commentSection: "",
-        }
+        // comments: {
+        //     photo: "",
+        //     name: "",
+        //     duration: "",
+        //     weather: "",
+        //     commentSection: "",
+        // }
     })
 
     const handleChange = (event) => {
@@ -45,7 +45,7 @@ const AddHike = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleCreate(hike)
+        props.handleCreateHike(hike)
     }
 
     return (
@@ -72,7 +72,7 @@ const AddHike = (props) => {
                 <br />
 
                 <label htmlFor="duration">Duration</label>
-                <input type="text" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
+                <input type="number" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
                 <br />
 
                 <fieldset>
