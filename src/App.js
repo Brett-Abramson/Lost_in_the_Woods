@@ -5,6 +5,7 @@ import axios from "axios"
 import Camp from "./components/camping/camp"
 import Hike from "./components/hiking/show"
 import Home from"./components/home"
+import AddHike from "./components/hiking/add"
 
 const App = () => {
   //  === CAMPING ===
@@ -99,7 +100,7 @@ const testing = () =>{
         <Home />
       </>
       {<button onClick={getCamps}>Testing</button>}
-          <Camp camp={camp} />
+          <Camp  />
       {hikes.map((hikes) => {
         return (
           <>
@@ -107,6 +108,7 @@ const testing = () =>{
           </>
         )
       })}
+      <AddHike />
     </>
   )
 }
