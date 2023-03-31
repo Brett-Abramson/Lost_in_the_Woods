@@ -1,4 +1,4 @@
-// import ".../App.css";
+import "../../style/index.css"
 
 const Camping = (props) => {
     return (
@@ -74,5 +74,5 @@ const Camping = (props) => {
       </div>
     );
   };
-  export default Camp;
+  export default Camping;
   

@@ -5,6 +5,8 @@ import axios from "axios"
 import Camp from "./components/camping/camp"
 import Hike from "./components/hiking/show"
 import Home from"./components/home"
+import AddHike from "./components/hiking/add"
+import AddCamp from "./components/camping/add"
 
 const App = () => {
   //  === CAMPING ===
@@ -31,7 +33,7 @@ const App = () => {
       let newCamps = camps.filter((camp) => {
         return camp._id !== deletedCamp._id
       })
-      setHikes(newCamps)
+      setCamps(newCamps)
     })
   }
   const handleEditCamp = (data) => {
@@ -58,7 +60,7 @@ const App = () => {
     axios.post("http://localhost:3000/hiking", data).then((response) => {
       console.log(response);
       let newHikes = [...hikes, response.data]
-      setCamps(newHikes)
+      setHikes(newHikes)
     })
   }
   const handleDeleteHike = (deletedHike) => {
@@ -99,13 +101,7 @@ const testing = () =>{
         <Home />
       </>
       {<button onClick={getCamps}>Testing</button>}
-      {camps.map((camp) => {
-        return (
-          <>
-          <Camp camp={camp} />
-          </>
-        )
-      })}
+          <Camp  />
       {hikes.map((hikes) => {
         return (
           <>
@@ -113,6 +109,8 @@ const testing = () =>{
           </>
         )
       })}
+      <AddHike />
+      <AddCamp />
     </>
   )
 }
