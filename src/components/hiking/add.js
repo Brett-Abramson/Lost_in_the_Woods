@@ -12,27 +12,27 @@ const AddHike = (props) => {
         routeType: "",
         mapIntigration: "",
         tags: {
-        quick: false,
-        easy: false,
-        challenging: false,
-        petFriednly: false,
-        offLeash: false,
-        kidFriendly: false,
-        handicap: false,
-        wheelchair: false,
-        easeHead: false,
-        bathrooms: false,
-        water: false,
-        freePraking: false,
+            quick: false,
+            easy: false,
+            challenging: false,
+            petFriednly: false,
+            offLeash: false,
+            kidFriendly: false,
+            handicap: false,
+            wheelchair: false,
+            easeHead: false,
+            bathrooms: false,
+            water: false,
+            freePraking: false,
         },
         description:"",
         parkingDetails: "",
         comments: {
-        photo: "",
-        name: "",
-        duration: "",
-        weather: "",
-        commentSection: "",
+            photo: "",
+            name: "",
+            duration: "",
+            weather: "",
+            commentSection: "",
         }
     })
 
@@ -40,7 +40,7 @@ const AddHike = (props) => {
         setHike ({...hike, [event.target.name] : event.target.value})
     }
     const handleCheckedChange = (event) => {
-        // need to use a toggle like "setHike(!hike)" on checkbox values when checked ? then they add the value as a string to the database so they can show up as tags? or we have it so if the vlue is true then the created tag shows up
+        // need to use a toggle like "setHike(!hike)" on checkbox values when checked ? if we use boolean values for the checkbox's then we will need a bunch of different tags that toggle based on the checkbox being checked or not (true or false). If we assign a string value to the checkbox then if it is true it will submit its text to a single tag function that will then create a tag with the value of the checked(true) tag
 
     }
     const handleSubmit = (event) => {
@@ -107,9 +107,9 @@ const AddHike = (props) => {
                     <br />
                 </fieldset>
 
-                <legend>Was it..</legend>
                 
                 <div className="tag-container">
+                    <legend>Was it..</legend>
                     <div>
                         <input type="checkbox" id="quick" name="quick" value=""  onChange={handleChange} />
                         <label htmlFor="quick">Quick</label>
@@ -158,11 +158,12 @@ const AddHike = (props) => {
                         <input type="checkbox" id="Free Parking" name="Free Parking" value=""  onChange={handleChange} />
                         <label htmlFor="Free Parking">Free Parking</label>
                     </div>
+                </div>
                     <div className="comments">
                         <label htmlFor="commentSection">Description</label>
-                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us baout the hike. What is the terrain like? What did you like about it? What hsould others know?" />
+                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What hsould others know?" />
                     </div>
-                </div>
+                
                 <button type="submit">Add Hike</button>
             </form>
         </>

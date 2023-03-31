@@ -6,6 +6,7 @@ import Camp from "./components/camping/camp"
 import Hike from "./components/hiking/show"
 import Home from"./components/home"
 import AddHike from "./components/hiking/add"
+import AddCamp from "./components/camping/add"
 
 const App = () => {
   //  === CAMPING ===
@@ -109,6 +110,7 @@ const testing = () =>{
         )
       })}
       <AddHike />
+      <AddCamp />
     </>
   )
 }
