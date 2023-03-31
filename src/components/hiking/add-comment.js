@@ -2,10 +2,14 @@ import { useState } from "react";
 
 const AddHikeComment = (props) => {
   const [addComment, setAddComment] = useState(false);
-const [weather, setWeather]=useState()
+  const [weather, setWeather]=useState()
 
-  const [comment, setComment] = useState({
-
+  const [comments, setComment] = useState({
+      photo: "",
+      name: "",
+      duration: "",
+      weather: "",
+      commentSection: ""
   });
 
   //this is for the modal
@@ -15,13 +19,53 @@ const [weather, setWeather]=useState()
 
 
   ///this is for the buttons
-  const handleChange = (event) => {
-    setComment({ ...comment, [event.target.name]: event.target.value });
+  // const handleCommentChange = (event) => {
+  //   setComment({ 
+  //     ...comments, 
+  //     [event.target.name]: event.target.value });
+  // };
+
+  const handlePhotoChange = (event) => {
+    setComment({
+      ...comments,
+      comments: { ...props.hikes.comments, photo: event.target.value},
+    });
   };
 
-  const handleSubmit = (event) => {
+  const handleNameChange = (event) => {
+    setComment({
+      ...comments,
+      comments: { ...props.hikes.comments, name: event.target.value},
+    });
+  };
+
+  const handleWeatherChange = (event) => {
+    setComment({
+      ...comments,
+      comments: { ...props.hikes.comments, weather: event.target.value},
+    });
+  };
+
+  const handleDurationChange = (event) => {
+    setComment({
+      ...comments,
+      comments: { ...props.hikes.comments, name: event.target.value},
+    });
+  };
+
+  const handleCommentSectionChange = (event) => {
+    setComment({
+      ...comments,
+      comments: { ...props.hikes.comments, commentSection: event.target.value},
+    });
+  };
+
+
+  const handleCommentSubmit = (event) => {
     event.preventDefault();
-    props.handleCreateHikeComment(comment);
+    props.handleCreateHikeComment(comments);
+    console.log(props.handleCreateHikeComment)
+    
   };
 
   return (
@@ -32,28 +76,28 @@ const [weather, setWeather]=useState()
           <div onClick={toggleAdd} className="overlay"></div>
           <div className="modal-content">
             <h1>Add a comment</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleCommentSubmit}>
               <label htmlFor="name">Name: </label>
-              <input type="text" name="name" placeholder="Your name goes here" onChange={handleChange} />
+              <input type="text" name="name" placeholder="Your name goes here" onChange={handleNameChange} />
 
               <label htmlFor="duration">Duration</label>
-              <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleChange} />
+              <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleDurationChange} />
 
               <label htmlFor="weather">What was the weather like? </label>
-                <input type="radio" name="weather" value="sunny" onChange={e=>setWeather(e.target.value)}></input>
-                <input type="radio" name="weather" value="muddy" onChange={e=>setWeather(e.target.value)}></input>
-                <input type="radio" name="weather" value="cloudy" onChange={e=>setWeather(e.target.value)}></input>
-                <input type="radio" name="weather" value="windy" onChange={e=>setWeather(e.target.value)}></input>
-                <input type="radio" name="weather" value="humid" onChange={e=>setWeather(e.target.value)}></input>
-                <input type="radio" name="weather" value="snowy" onChange={e=>setWeather(e.target.value)}></input>
+                <input type="radio" name="weather" value="sunny" onChange={e=>setWeather(e.target.value)}/><p>Sunny</p>
+                <input type="radio" name="weather" value="muddy" onChange={e=>setWeather(e.target.value)}/><p>Muddy</p>
+                <input type="radio" name="weather" value="cloudy" onChange={e=>setWeather(e.target.value)}/><p>Cloudy</p>
+                <input type="radio" name="weather" value="windy" onChange={e=>setWeather(e.target.value)}/><p>Windy</p>
+                <input type="radio" name="weather" value="humid" onChange={e=>setWeather(e.target.value)}/><p>Humid</p>
+                <input type="radio" name="weather" value="snowy" onChange={e=>setWeather(e.target.value)}/><p>Snowy</p>
 
               <label htmlFor="commentSection">Comments </label>
-              <textarea rows="4" cols="50" name="commentSection" placeholder="What was the hike like? What should other hikers know about the trail?" onChange={handleChange}>
+              <textarea rows="4" cols="50" name="commentSection" placeholder="What was the hike like? What should other hikers know about the trail?" onChange={handleCommentSectionChange}>
                 </textarea>
 {/* add radios with the booleans here */}
 
               <label htmlFor="photo">Photo: </label>
-              <input type="text" name="photo" onChange={handleChange} />
+              <input type="text" name="photo" />
               {/* do I want to set up drag and drop here? */}
 
               <input type="submit" />
@@ -68,4 +112,7 @@ const [weather, setWeather]=useState()
   );
 };
 
+
+
 export default AddHikeComment;
+
