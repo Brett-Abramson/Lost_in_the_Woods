@@ -161,7 +161,7 @@ const AddHike = (props) => {
                 </div>
                     <div className="comments">
                         <label htmlFor="commentSection">Description</label>
-                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us baout the hike. What is the terrain like? What did you like about it? What hsould others know?" />
+                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What hsould others know?" />
                     </div>
                 
                 <button type="submit">Add Hike</button>
