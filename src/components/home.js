@@ -2,7 +2,11 @@ import "../style/home.css"
 
 
 const Home = () => {
+    const [viewPage, setViewPage] = useState(false);
 
+    const toggleView = () => {
+        setViewPage(!viewPage)
+    }
 
     return(
         <div className="home-page">
