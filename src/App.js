@@ -105,8 +105,8 @@ const testing = () =>{
       {hikes.map((hikes) => {
         return (
           <>
-          {console.log(hikes)}
             <Hike hikes={hikes} />
+            <TestAddComment hikes={hikes} />
           </>
         )
       })}
