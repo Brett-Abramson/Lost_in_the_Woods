@@ -1,4 +1,4 @@
-import "../../c
+import "../../style/index.css"
 
 const Camp = (props) => {
     return(
@@ -22,7 +22,8 @@ const Camp = (props) => {
             </div>
             <main>
                 <div className="card-container">
-
+                    {/* Map over the array to produce the card display */}
+                    {/* Right now its is prducing this for every item in the index.. that only needs to happen in the display */}
                 </div>
             </main>
 
