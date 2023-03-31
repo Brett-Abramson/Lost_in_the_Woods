@@ -107,9 +107,9 @@ const AddHike = (props) => {
                     <br />
                 </fieldset>
 
-                <legend>Was it..</legend>
                 
                 <div className="tag-container">
+                    <legend>Was it..</legend>
                     <div>
                         <input type="checkbox" id="quick" name="quick" value=""  onChange={handleChange} />
                         <label htmlFor="quick">Quick</label>

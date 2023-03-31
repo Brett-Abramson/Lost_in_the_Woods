@@ -43,7 +43,7 @@ const AddCamp = (props) => {
     }
     const handleSubmit= (event) => {
         event.preventDefault()
-        props.handleCreate(hike)
+        props.handleCreate(camp)
     }
 
 
@@ -106,10 +106,64 @@ const AddCamp = (props) => {
                     <br />
                 </fieldset>
 
+                <legend>Amenities...</legend>
                 
-        
-        
-        
+                <div className="tag-container">
+                    <div>
+                        <input type="checkbox" id="bathroom" name="bathroom" value=""  onChange={handleChange} />
+                        <label htmlFor="bathroom">Bathrooms</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="shower" name="shower" value="shower"  onChange={handleChange} />
+                        <label htmlFor="shower">Shower</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="campfire" name="campfire" value="campfire"  onChange={handleChange} />
+                        <label htmlFor="campfire">Campfire</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="wifi" name="wifi" value="wifi"  onChange={handleChange} />
+                        <label htmlFor="wifi">Wifi</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="water" name="water" value="water"  onChange={handleChange} />
+                        <label htmlFor="water">Water hook up</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="electric" name="kidFriendly" value="electric"  onChange={handleChange} />
+                        <label htmlFor="kidFriendly">Electric hook up</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dumpStation" name="dumpStation" value="dumpstation"  onChange={handleChange} />
+                        <label htmlFor="dumpStation">Dump Station</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="potableWater" name="potableWater" value="potableWater"  onChange={handleChange} />
+                        <label htmlFor="potableWater">Potable Water Friendly</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="laundry" name="laundry" value="laundry"  onChange={handleChange} />
+                        <label htmlFor="laundry">Laundry</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="trash" name="trash" value="trash"  onChange={handleChange} />
+                        <label htmlFor="trash">Trash</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="recycling" name="recycling" value="recycling"  onChange={handleChange} />
+                        <label htmlFor="recycling">Recycling</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="firewood" name="firewood" value="firewood"  onChange={handleChange} />
+                        <label htmlFor="firewood">Firewood</label>
+                    </div>
+                </div>
+                <div className="comments">
+                        <label htmlFor="commentSection">Description</label>
+                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us about the campground. What did you like about it? What hsould others know?" />
+                    </div>
+                
+                    <button type="submit">Add Campsite</button>
             </form>
         </>
 
@@ -122,3 +176,5 @@ const AddCamp = (props) => {
 
 
 }
+
+export default AddCamp
