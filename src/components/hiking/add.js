@@ -67,6 +67,10 @@ const AddHike = (props) => {
                 <input type="text" name="mapIntegration" id="mapIntegration" placeholder="Add the link for directions to the trail" onChange={handleChange} />
                  <br />
 
+                 <label htmlFor="distance">Distance</label>
+                <input type="number" name="distance" id="distance" placeholder="How long is the trail in miles?" onChange={handleChange} />
+                <br />
+
                 <label htmlFor="elevationGain">Elevation</label>
                 <input type="number" name="elevationGain" id="elevationGain" placeholder="How much total elevation did you gain?" onChange={handleChange} />
                 <br />
