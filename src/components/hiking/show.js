@@ -1,6 +1,21 @@
 // import ".../App.css";
+import axios from "axios"
+import {useState} from "react"
+
+import AddHikeComment from "./add-comment"
+
 
 const Hike = (props) => {
+  const [hikeComment, setHikeComment] = useState([])
+
+  const handleCreateHikeComment = (data) => {
+    axios.post("http://localhost:3000/hiking", data).then((response) => {
+      console.log(response);
+      let newHikeComment = [...props.hikeComment, response.data]
+      setHikeComment(newHikeComment)
+    })
+  }
+
   return (
     // <>
     //   {props.hikes.name}
@@ -40,30 +55,33 @@ const Hike = (props) => {
 
           <div className="map">{/* spot holder for the map integration */}</div>
 
+          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} />
+{/* {props.hikeComment((sub) =>
+<> */}
           {/* <div className="comment-section"> */}
             {/* make this a column */}
             {/* need to add something that maps through the array of comments and prints them all out */}
             {/* <div className="comment-header"> */}
                 {/* make this a row */}
-              {/* <img src={props.hikes.comments.name} alt="commenter"></img>
+              {/* <img src={sub.comments.name} alt="commenter"></img>
               <div className="name-and-info"> */}
                 {/* make this a column */}
-                {/* <h3>{props.hikes.comments.name}</h3> */}
+                {/* <h3>{sub.comments.name}</h3> */}
                 {/* <div className="info"> */}
                     {/* make this a row */}
-                  {/* <p>{props.hikes.comments.duration}</p> */}
-                  {/* <p>{props.hikes.comments.weather}</p> */}
+                  {/* <p>{sub.comments.duration}</p> */}
+                  {/* <p>{sub.comments.weather}</p> */}
                 {/* </div> */}
               {/* </div> */}
             {/* </div> */}
             {/* <div className="commenters-comment-photos-delete-and-edit"> */}
                 {/* make this a column */}
                 {/* <div className="commenters-comment"> */}
-                    {/* <p>{props.hikes.comments.commentSection}</p> */}
+                    {/* <p>{sub.comments.commentSection}</p> */}
                 {/* </div> */}
             {/* <div className="commenters-photos"> */}
                 {/* write soemthing to loop through and show all of the photos */}
-                {/* <img src={props.hikes.comments.photo} alt="hike"></img> */}
+                {/* <img src={sub.comments.photo} alt="hike"></img> */}
             {/* </div> */}
             {/* <div className="commenters-delete-and-edit"> */}
                 {/* make this a row */}
@@ -72,7 +90,10 @@ const Hike = (props) => {
                 {/* <p>get the rescrouses for the date tag</p> */}
             {/* </div> */}
             {/* </div> */}
-          {/* </div> */}
+          {/* </div> */}               
+{/* </>
+)} */}
+
         </div>
       </div>
     </div>
