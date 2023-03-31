@@ -45,7 +45,7 @@ const AddHike = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleCreateHike(hike)
+        props.handleCreate(hike)
     }
 
     return (
