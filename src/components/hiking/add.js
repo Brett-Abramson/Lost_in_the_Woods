@@ -45,7 +45,7 @@ const AddHike = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleCreate(hike)
+        props.handleCreateHike(hike)
     }
 
     return (
@@ -159,11 +159,6 @@ const AddHike = (props) => {
                         <label htmlFor="Free Parking">Free Parking</label>
                     </div>
                 </div>
-                    <div className="comments">
-                        <label htmlFor="commentSection">Description</label>
-                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What hsould others know?" />
-                    </div>
-                
                 <button type="submit">Add Hike</button>
             </form>
         </>
