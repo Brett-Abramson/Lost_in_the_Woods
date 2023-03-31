@@ -20,13 +20,13 @@ const App = () => {
     .catch((error) => console.log(error))
     }
   
-  const handleCreateCamp = (data) => {
-    axios.post("http://localhost:3000/camping", data).then((response) => {
-      console.log(response);
-      let newCamps = [...camps, response.data]
-      setCamps(newCamps)
-    })
-  }
+    const handleCreateCamp = (data) => {
+      axios.post("http://localhost:3000/camping", data).then((response) => {
+        console.log(response);
+        let newCamps = [...camps, response.data]
+        setCamps(newCamps)
+      })
+    }
   const handleDeleteCamp = (deletedCamp) => {
     axios.delete("http://localhost:3000/camping/" + deletedCamp._id)
     .then((response) => {
@@ -110,7 +110,7 @@ const testing = () =>{
         )
       })}
       <AddHike />
-      <AddCamp handleCreateHike={handleCreateHike} />
+      <AddCamp handleCreate={handleCreateCamp} />
     </>
   )
 }

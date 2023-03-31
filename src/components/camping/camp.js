@@ -13,7 +13,7 @@ const Camp = (props) => {
                 </div>
             </div>
             <div className="filterbar">
-                <div classname="filterbar-left-side">
+                <div className="filterbar-left-side">
                     ICONS
                 </div>
                 <div className="filterbar-right-side">

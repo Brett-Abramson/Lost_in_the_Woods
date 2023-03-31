@@ -21,7 +21,7 @@ const Camping = (props) => {
             <div className="basic-info">
               <p>Site size {props.camp.campsiteSize}</p>
               <p>Type of booking {props.camp.bookingType}</p>
-              <p>Fire ring {props.camp.Amenities.fireRing}</p>
+              {/* <p>Fire ring {props.camp.Amenities.fireRing}</p> */}
             </div>
   
             <div className="tags">
@@ -36,39 +36,39 @@ const Camping = (props) => {
   
             <div className="map">{/* spot holder for the map integration */}</div>
   
-            <div className="comment-section">
+            {/* <div className="comment-section"> */}
               {/* make this a column */}
               {/* need to add something that maps through the array of comments and prints them all out */}
-              <div className="comment-header">
+              {/* <div className="comment-header"> */}
                   {/* make this a row */}
-                <img src={props.camp.comments.name} alt="commenter"></img>
-                <div className="name-and-info">
+                {/* <img src={props.camp.comments.name} alt="commenter"></img> */}
+                {/* <div className="name-and-info"> */}
                   {/* make this a column */}
-                  <h3>{props.camp.comments.name}</h3>
-                  <div className="info">
+                  {/* <h3>{props.camp.comments.name}</h3> */}
+                  {/* <div className="info"> */}
                       {/* make this a row */}
-                    <p>{props.camp.comments.duration}</p>
-                    <p>{props.camp.comments.weather}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="commenters-comment-photos-delete-and-edit">
+                    {/* <p>{props.camp.comments.duration}</p> */}
+                    {/* <p>{props.camp.comments.weather}</p> */}
+                  {/* </div> */}
+                {/* </div> */}
+              {/* </div> */}
+              {/* <div className="commenters-comment-photos-delete-and-edit"> */}
                   {/* make this a column */}
-                  <div className="commenters-comment">
-                      <p>{props.camp.comments.commentSection}</p>
-                  </div>
-              <div className="commenters-photos">
+                  {/* <div className="commenters-comment"> */}
+                      {/* <p>{props.camp.comments.commentSection}</p> */}
+                  {/* </div> */}
+              {/* <div className="commenters-photos"> */}
                   {/* write soemthing to loop through and show all of the photos */}
-                  <img src={props.camp.comments.photo} alt="hike"></img>
-              </div>
-              <div className="commenters-delete-and-edit">
+                  {/* <img src={props.camp.comments.photo} alt="hike"></img> */}
+              {/* </div> */}
+              {/* <div className="commenters-delete-and-edit"> */}
                   {/* make this a row */}
-                  <img></img>
-                  <img></img>
+                  {/* <img></img> */}
+                  {/* <img></img> */}
                   {/* <p>get the rescrouses for the date tag</p> */}
-              </div>
-              </div>
-            </div>
+              {/* </div> */}
+              {/* </div> */}
+            {/* </div> */}
           </div>
         </div>
       </div>
