@@ -111,7 +111,7 @@ const testing = () =>{
         )
       })}
       <AddHike handleCreateHike={handleCreateHike} />
-      <AddCamp />
+      <AddCamp handleCreateHike={handleCreateHike}/>
     </>
   )
 }
