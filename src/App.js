@@ -10,6 +10,7 @@ import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
 import TestAddComment from './components/hiking/TEST-add-comment';
 import EditHike from './components/hiking/edit';
+import AddHikeComment from './components/hiking/add-comment';
 
 const App = () => {
   //  === CAMPING ===
@@ -111,6 +112,7 @@ const testing = () =>{
           <>
             <Hike hikes={hikes}  />
             <EditHike hike={hikes} handleEdit={handleEditHike} />
+            <AddHikeComment hike={hikes} handleEdit={handleEditHike} />
           </>
         )
       })}

@@ -3,7 +3,7 @@ import { useState } from "react";
 const AddHikeComment = (props) => {
   const [addComment, setAddComment] = useState(false);
   // const [weather, setWeather]=useState()
-
+  const [hike,setHike] = useState({...props.hike})
   const [comments, setComment] = useState({
       photo: "",
       name: "",
@@ -28,11 +28,14 @@ const AddHikeComment = (props) => {
   const handlePhotoChange = (event) => {
     setComment({
       ...comments,
-      comments: { ...props.hikes.comments, photo: event.target.value},
+      comments: { ...props.hike.comments, photo: event.target.value},
     });
   };
 
   const handleNameChange = (event) => {
+    setComment({...comments, [event.target.name] : event.target.value})
+  }
+  const handleChange = (event) => {
     setComment({...comments, [event.target.name] : event.target.value})
   }
   const handleWeatherChange = (event) => {
@@ -59,9 +62,8 @@ const AddHikeComment = (props) => {
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
-    props.handleEditHike(comments);
-    console.log(props.hikes.name)
-    console.log(comments)
+    setHike(hike.comment.push(comments))
+    props.handleEdit(hike);
     
   };
 
@@ -78,7 +80,7 @@ const AddHikeComment = (props) => {
               <input type="text" name="name" placeholder="Your name goes here" onChange={handleNameChange} />
 
               <label htmlFor="duration">Duration</label>
-              <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleDurationChange} />
+              <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleChange} />
 
               {/* <label htmlFor="weather">What was the weather like? </label>
                 <input type="radio" name="weather" value="sunny" onChange={e=>setWeather(e.target.value)}/><p>Sunny</p>
@@ -89,7 +91,7 @@ const AddHikeComment = (props) => {
                 <input type="radio" name="weather" value="snowy" onChange={e=>setWeather(e.target.value)}/><p>Snowy</p> */}
 
               <label htmlFor="commentSection">Comments </label>
-              <textarea rows="4" cols="50" name="commentSection" placeholder="What was the hike like? What should other hikers know about the trail?" onChange={handleCommentSectionChange}>
+              <textarea rows="4" cols="50" name="commentSection" placeholder="What was the hike like? What should other hikers know about the trail?" onChange={handleChange}>
                 </textarea>
 {/* add radios with the booleans here */}
 
