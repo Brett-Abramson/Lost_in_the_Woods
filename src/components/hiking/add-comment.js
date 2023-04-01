@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const AddHikeComment = (props) => {
   const [addComment, setAddComment] = useState(false);
-  const [weather, setWeather]=useState()
+  // const [weather, setWeather]=useState()
 
   const [comments, setComment] = useState({
       photo: "",
@@ -33,12 +33,8 @@ const AddHikeComment = (props) => {
   };
 
   const handleNameChange = (event) => {
-    setComment({
-      ...comments,
-      comments: { ...props.hikes.comments, name: event.target.value},
-    });
-  };
-
+    setComment({...comments, [event.target.name] : event.target.value})
+  }
   const handleWeatherChange = (event) => {
     setComment({
       ...comments,
@@ -63,8 +59,9 @@ const AddHikeComment = (props) => {
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
-    props.handleCreateHikeComment(comments);
-    console.log(props.handleCreateHikeComment)
+    props.handleEditHike(comments);
+    console.log(props.hikes.name)
+    console.log(comments)
     
   };
 
@@ -83,13 +80,13 @@ const AddHikeComment = (props) => {
               <label htmlFor="duration">Duration</label>
               <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleDurationChange} />
 
-              <label htmlFor="weather">What was the weather like? </label>
+              {/* <label htmlFor="weather">What was the weather like? </label>
                 <input type="radio" name="weather" value="sunny" onChange={e=>setWeather(e.target.value)}/><p>Sunny</p>
                 <input type="radio" name="weather" value="muddy" onChange={e=>setWeather(e.target.value)}/><p>Muddy</p>
                 <input type="radio" name="weather" value="cloudy" onChange={e=>setWeather(e.target.value)}/><p>Cloudy</p>
                 <input type="radio" name="weather" value="windy" onChange={e=>setWeather(e.target.value)}/><p>Windy</p>
                 <input type="radio" name="weather" value="humid" onChange={e=>setWeather(e.target.value)}/><p>Humid</p>
-                <input type="radio" name="weather" value="snowy" onChange={e=>setWeather(e.target.value)}/><p>Snowy</p>
+                <input type="radio" name="weather" value="snowy" onChange={e=>setWeather(e.target.value)}/><p>Snowy</p> */}
 
               <label htmlFor="commentSection">Comments </label>
               <textarea rows="4" cols="50" name="commentSection" placeholder="What was the hike like? What should other hikers know about the trail?" onChange={handleCommentSectionChange}>

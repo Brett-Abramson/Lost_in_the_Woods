@@ -27,13 +27,13 @@ const AddHike = (props) => {
         // }],
         description:"",
         parkingDetails: "",
-        comments: [{
-            photo: "",
-            name: "",
-            duration: "",
-            weather: "",
-            commentSection: "",
-        }]
+        // comments: [{
+        //     photo: "",
+        //     name: "",
+        //     duration: "",
+        //     weather: "",
+        //     commentSection: "",
+        // }]
     })
 
     const handleChange = (event) => {

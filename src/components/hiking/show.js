@@ -58,9 +58,10 @@ const Hike = (props) => {
 
           <div className="map">{/* spot holder for the map integration */}</div>
           <div>
-            
+            <div className="edit-Hike">
+            </div>
           </div>
-          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment}  />
+          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} handleEditHike={props.handleEdit}  />
 {/* {props.hikeComment((sub) =>
 <> */}
           {/* <div className="comment-section"> */}
