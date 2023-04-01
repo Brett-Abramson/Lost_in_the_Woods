@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+  }
+  .visible {
+    display: block;
+  }
+  #hidden {
+    visibility: hidden;
+    height: 0;
+  }
+  #visible {
+    visibility: visible;
+  }
