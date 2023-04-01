@@ -9,6 +9,11 @@ import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
 
 const App = () => {
+//===hide and show====
+const [show, setShow] = useState(false);
+const [see, setSee] = useState(false);
+// const [seeHome, setSeeHome] = useState(true);
+
   //  === CAMPING ===
   const [camps, setCamps] = useState([])
   
@@ -82,6 +87,19 @@ const App = () => {
       setHikes(newHike)
     })
   }
+
+  const showHike = () => {
+    show ? setShow(false) : setShow(true);
+  }
+
+  const showCamp = () => {
+    see ? setSee(false) : setSee(true);
+  }
+
+  // const showHome = () => {
+  //   seeHome ? setSee(true) : setSeeHome(false);
+
+  // }
   
 
   useEffect(() => {
@@ -98,20 +116,25 @@ const testing = () =>{
   return (
     <>
       <>
-        <Home />
+        {/* <Home /> */}
       </>
-      {<button onClick={getCamps}>Testing</button>}
-          <Camp  camps={camps}/>
-      {hikes.map((hikes) => {
+      <button class="buttons-style" onClick={showHike}>See Hikes</button>
+      <button class="buttons-style" onClick={showCamp}>See Camps</button>
+
+      {/* {<button onClick={getCamps}>Testing</button>} */}
+         {see ?  <Camp  camps={camps}/> : null} 
+
+          {show ? 
+      hikes.map((hikes) => {
         return (
           <>
             <Hike hikes={hikes} />
           </>
         )
-      })}
-      <AddHike handleCreate={handleCreateHike}/>
+      }): <Home />}
+      {/* <AddHike handleCreate={handleCreateHike}/> */}
 
-      <AddCamp handleCreate={handleCreateCamp} />
+      {/* <AddCamp handleCreate={handleCreateCamp} /> */}
 
     </>
   )
