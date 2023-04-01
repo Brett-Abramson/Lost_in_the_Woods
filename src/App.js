@@ -103,7 +103,7 @@ const testing = () =>{
       </>
       {<button onClick={getCamps}>Testing</button>}
         <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} />
-        <Camp  camps={camps}/>
+        <Camp  camps={camps} handleDelete={handleDeleteCamp}/>
       {hikes.map((hikes) => {
         return (
           <>

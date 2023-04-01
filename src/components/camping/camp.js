@@ -34,6 +34,7 @@ const Camp = (props) => {
                                     <p>{camp.campType}</p>
                                     <p>{camp.easeOfBooking}</p>
                                 </div>
+                                <button onClick={()=>{props.handleDelete(camp)}}>Delete Camp</button>
                             </div>
                         )
                     })}
