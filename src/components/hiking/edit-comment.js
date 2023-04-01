@@ -2,24 +2,24 @@ import {useState} from 'react'
 
 const Edit = (props) => {
 
-  const [cat, setCat] = useState({...props.cat})
-  const [editCat, setEditCat] = useState(false);
+  const [comment, setComment] = useState({...props.comment})
+  const [editComment, setEditComment] = useState(false);
 
   const handleChange = (event) => {
-    setCat({...cat, [event.target.name]: event.target.value})
+    setComment({...comment, [event.target.name]: event.target.value})
    }
    const handleSubmit = (event) => {
       event.preventDefault()
-      props.handleEdit(cat)
+      props.handleEdit(comment)
    }
 
    const toggleAdd = () => {
-    setEditCat(!editCat)
+    setEditComment(!editComment)
 }
 
   return(
     <>
-    <button onClick={toggleAdd}>add comment</button>
+    <button onClick={toggleAdd}>Edit comment</button>
     {addComment && (
       <div className="modal">
         <div onClick={toggleAdd} className="overlay"></div>
