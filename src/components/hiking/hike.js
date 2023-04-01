@@ -34,6 +34,7 @@ const HikeIndex = (props) => {
                                     <p>{hike.difficulty}</p>
                                     <p>{hike.distance} miles</p>
                                 </div>
+                                <button onClick={()=>{props.handleDelete(hike)}}>Delete Hike</button>
                             </div>
                         )
                     })}
