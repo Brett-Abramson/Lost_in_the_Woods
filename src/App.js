@@ -7,6 +7,7 @@ import Hike from "./components/hiking/show"
 import Home from"./components/home"
 import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
+import TestAddComment from './components/hiking/TEST-add-comment';
 
 const App = () => {
   //  === CAMPING ===
