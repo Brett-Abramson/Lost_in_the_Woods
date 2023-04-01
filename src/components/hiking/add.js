@@ -11,7 +11,7 @@ const AddHike = (props) => {
         elevationGain: "",
         routeType: "",
         mapIntigration: "",
-        // tags: {
+        // tags: [{
         //     quick: false,
         //     easy: false,
         //     challenging: false,
@@ -23,17 +23,17 @@ const AddHike = (props) => {
         //     easeHead: false,
         //     bathrooms: false,
         //     water: false,
-        //     freePraking: false,
-        // },
+        //     freeParking: false,
+        // }],
         description:"",
         parkingDetails: "",
-        comments: {
-            photo: "",
-            name: "",
-            duration: "",
-            weather: "",
-            commentSection: "",
-        }
+        // comments: [{
+        //     photo: "",
+        //     name: "",
+        //     duration: "",
+        //     weather: "",
+        //     commentSection: "",
+        // }]
     })
 
     const handleChange = (event) => {
@@ -45,7 +45,7 @@ const AddHike = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleCreate(hike)
+        props.handleCreateHike(hike)
     }
 
     return (
@@ -67,12 +67,16 @@ const AddHike = (props) => {
                 <input type="text" name="mapIntegration" id="mapIntegration" placeholder="Add the link for directions to the trail" onChange={handleChange} />
                  <br />
 
+                 <label htmlFor="distance">Distance</label>
+                <input type="number" name="distance" id="distance" placeholder="How long is the trail in miles?" onChange={handleChange} />
+                <br />
+
                 <label htmlFor="elevationGain">Elevation</label>
                 <input type="number" name="elevationGain" id="elevationGain" placeholder="How much total elevation did you gain?" onChange={handleChange} />
                 <br />
 
                 <label htmlFor="duration">Duration</label>
-                <input type="text" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
+                <input type="number" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
                 <br />
 
                 <fieldset>

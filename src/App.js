@@ -3,10 +3,13 @@ import {useState, useEffect} from "react"
 // import PORT from ".../project_3_backend/server.js"
 import axios from "axios"
 import Camp from "./components/camping/camp"
+import HikeIndex from "./components/hiking/hike"
 import Hike from "./components/hiking/show"
 import Home from"./components/home"
 import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
+import TestAddComment from './components/hiking/TEST-add-comment';
+import EditHike from './components/hiking/edit';
 
 const App = () => {
   //  === CAMPING ===
@@ -101,11 +104,13 @@ const testing = () =>{
         <Home />
       </>
       {<button onClick={getCamps}>Testing</button>}
-          <Camp  camps={camps}/>
+        <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} />
+        <Camp  camps={camps} handleDelete={handleDeleteCamp}/>
       {hikes.map((hikes) => {
         return (
           <>
-            <Hike hikes={hikes} />
+            <Hike hikes={hikes}  />
+            <EditHike hike={hikes} handleEdit={handleEditHike} />
           </>
         )
       })}

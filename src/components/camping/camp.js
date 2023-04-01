@@ -34,21 +34,13 @@ const Camp = (props) => {
                                     <p>{camp.campType}</p>
                                     <p>{camp.easeOfBooking}</p>
                                 </div>
-
-
-
+                                <button onClick={()=>{props.handleDelete(camp)}}>Delete Camp</button>
                             </div>
                         )
                     })}
-                    
-                    {/* Map over the array to produce the card display */}
-                    {/* Right now its is prducing this for every item in the index.. that only needs to happen in the display */}
                 </div>
             </main>
-
         </div>
-            
-
         </>
     )
 }
