@@ -3,10 +3,13 @@ import {useState, useEffect} from "react"
 // import PORT from ".../project_3_backend/server.js"
 import axios from "axios"
 import Camp from "./components/camping/camp"
+import HikeIndex from "./components/hiking/hike"
 import Hike from "./components/hiking/show"
 import Home from"./components/home"
 import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
+import TestAddComment from './components/hiking/TEST-add-comment';
+import EditHike from './components/hiking/edit';
 
 const App = () => {
 //===hide and show====
@@ -148,16 +151,17 @@ const showHikePage = () => {
 <div class={hidden1}>
  <Home />
  </div>
-      {/* {<button onClick={getCamps}>Testing</button>} */}
       <div class={hidden2}>
-         <Camp  camps={camps}/>
+              <Camp  camps={camps} handleDelete={handleDeleteCamp}/>
       </div>
 
       <div class={hidden3}>
+              <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} />
           {hikes.map((hikes) => {
         return (
           <>
-            <Hike hikes={hikes} />
+            <Hike hikes={hikes}  />
+            <EditHike hike={hikes} handleEdit={handleEditHike} />
           </>
         )
       })}
