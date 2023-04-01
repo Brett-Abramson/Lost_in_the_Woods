@@ -10,8 +10,8 @@ import AddCamp from "./components/camping/add"
 
 const App = () => {
 //===hide and show====
-const [show, setShow] = useState(false);
-const [see, setSee] = useState(false);
+// const [show, setShow] = useState(false);
+// const [see, setSee] = useState(false);
 // const [seeHome, setSeeHome] = useState(true);
 
   //  === CAMPING ===
@@ -88,13 +88,13 @@ const [see, setSee] = useState(false);
     })
   }
 
-  const showHike = () => {
-    show ? setShow(false) : setShow(true);
-  }
+  // const showHike = () => {
+  //   show ? setShow(false) : setShow(true);
+  // }
 
-  const showCamp = () => {
-    see ? setSee(false) : setSee(true);
-  }
+  // const showCamp = () => {
+  //   see ? setSee(false) : setSee(true);
+  // }
 
   // const showHome = () => {
   //   seeHome ? setSee(true) : setSeeHome(false);
@@ -113,25 +113,55 @@ const testing = () =>{
 
 }
 
+//====hidden=====
+const [hidden1, setHidden1] = useState("visible");
+const [hidden2, setHidden2] = useState("hidden");
+const [hidden3, setHidden3] = useState("hidden");
+
+const showCampPage = () => {
+  setHidden1("hidden");
+  setHidden2("visible");
+  setHidden3("hidden");
+};
+const showHomePage = () => {
+  setHidden1("visible");
+  setHidden2("hidden");
+  setHidden3("hidden");
+};
+const showHikePage = () => {
+  setHidden1("hidden");
+  setHidden2("hidden");
+  setHidden3("visible");
+};
+
   return (
     <>
       <>
         {/* <Home /> */}
       </>
-      <button class="buttons-style" onClick={showHike}>See Hikes</button>
-      <button class="buttons-style" onClick={showCamp}>See Camps</button>
+      {/* <button class="buttons-style" onClick={showHike}>See Hikes</button>
+      <button class="buttons-style" onClick={showCamp}>See Camps</button> */}
+      <button class="buttons-style" onClick={showCampPage}>Camp</button>
+      <button class="buttons-style" onClick={showHikePage}>Hike</button>
+      <button class="buttons-style" onClick={showHomePage}>Home</button>
 
+<div class={hidden1}>
+ <Home />
+ </div>
       {/* {<button onClick={getCamps}>Testing</button>} */}
-         {see ?  <Camp  camps={camps}/> : null} 
+      <div class={hidden2}>
+         <Camp  camps={camps}/>
+      </div>
 
-          {show ? 
-      hikes.map((hikes) => {
+      <div class={hidden3}>
+          {hikes.map((hikes) => {
         return (
           <>
             <Hike hikes={hikes} />
           </>
         )
-      }): <Home />}
+      })}
+      </div>
       {/* <AddHike handleCreate={handleCreateHike}/> */}
 
       {/* <AddCamp handleCreate={handleCreateCamp} /> */}
