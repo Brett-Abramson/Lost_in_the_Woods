@@ -1,13 +1,17 @@
-import "../style/home.css"
+// import "../style/home.css"
 
 
-const Home = () => {
-    const [viewPage, setViewPage] = useState(false);
+// const Home = () => {
+//     const [viewPage, setViewPage] = useState(false);
 
-    const toggleView = () => {
-        setViewPage(!viewPage)
-    }
+//     const toggleView = () => {
+//         setViewPage(!viewPage)
+//     }
+import React from 'react';
+import {Link} from 'react-router-dom'
 
+
+const HomePage = () => {
     return(
         <div className="home-page">
             <div className="navbar">
@@ -15,9 +19,13 @@ const Home = () => {
                     <h2>Lost in the woods</h2>
                 </div>
                 <div className="nav-links">
-                    <a href="#"><h3>Home</h3></a>
-                    <a href="#"><h3>Hiking</h3></a>
-                    <a href="#"><h3>Camping</h3></a>
+                <>
+           <h1>Let's go on an adventure</h1>
+           <Link to='/hikingviewall'>Hiking</Link>
+           <Link to='/campingviewall'>Camping</Link>
+           <Link to='/addnewhike'>Add New Hike</Link>
+           <Link to='/addnewcamp'>Add New Camp</Link>
+        </>
                 </div>
             </div>
             <main>
@@ -49,7 +57,12 @@ const Home = () => {
 
 
         </div>
+
+
     )
 }
 
-export default Home;
+export default HomePage;
+// }
+
+// export default Home;
