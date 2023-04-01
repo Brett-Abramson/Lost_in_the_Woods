@@ -10,90 +10,91 @@ import AddCamp from "./components/camping/add"
 
 const App = () => {
   //  === CAMPING ===
-  const [camps, setCamps] = useState([])
+  // const [camps, setCamps] = useState([])
   
   
-  const getCamps = () => {
-    axios.get("http://localhost:3000/camping")
-    .then((response) => setCamps(response.data), 
-    (err) => console.log(err))
-    .catch((error) => console.log(error))
-    }
+  // const getCamps = () => {
+  //   axios.get("http://localhost:3000/camping")
+  //   .then((response) => setCamps(response.data), 
+  //   (err) => console.log(err))
+  //   .catch((error) => console.log(error))
+  //   }
   
-  const handleCreateCamp = (data) => {
-    axios.post("http://localhost:3000/camping", data).then((response) => {
-      console.log(response);
-      let newCamps = [...camps, response.data]
-      setCamps(newCamps)
-    })
-  }
-  const handleDeleteCamp = (deletedCamp) => {
-    axios.delete("http://localhost:3000/camping/" + deletedCamp._id)
-    .then((response) => {
-      let newCamps = camps.filter((camp) => {
-        return camp._id !== deletedCamp._id
-      })
-      setCamps(newCamps)
-    })
-  }
-  const handleEditCamp = (data) => {
-    axios.put("http://localhost:3000/camping/" + data._id, data)
-    .then((response) => {
-      console.log(response)
-      let newCamp = camps.map((camp) => {
-        return camp._id !== data._id ? camp : data
-      })
-      setCamps(newCamp)
-    })
-  }
+  // const handleCreateCamp = (data) => {
+  //   axios.post("http://localhost:3000/camping", data).then((response) => {
+  //     console.log(response);
+  //     let newCamps = [...camps, response.data]
+  //     setCamps(newCamps)
+  //   })
+  // }
+  // const handleDeleteCamp = (deletedCamp) => {
+  //   axios.delete("http://localhost:3000/camping/" + deletedCamp._id)
+  //   .then((response) => {
+  //     let newCamps = camps.filter((camp) => {
+  //       return camp._id !== deletedCamp._id
+  //     })
+  //     setCamps(newCamps)
+  //   })
+  // }
+  // const handleEditCamp = (data) => {
+  //   axios.put("http://localhost:3000/camping/" + data._id, data)
+  //   .then((response) => {
+  //     console.log(response)
+  //     let newCamp = camps.map((camp) => {
+  //       return camp._id !== data._id ? camp : data
+  //     })
+  //     setCamps(newCamp)
+  //   })
+  // }
 
-  /// === HIKING  ===
-  const [hikes, setHikes] = useState([])
+  // /// === HIKING  ===
+  // const [hikes, setHikes] = useState([])
 
-  const getHikes = () => {
-    axios.get("http://localhost:3000/hiking")
-    .then((response) => setHikes(response.data), 
-    (err) => console.log(err))
-    .catch((error) => console.log(error))
-  }
-  const handleCreateHike = (data) => {
-    axios.post("http://localhost:3000/hiking", data).then((response) => {
-      console.log(response);
-      let newHikes = [...hikes, response.data]
-      setHikes(newHikes)
-    })
-  }
-  const handleDeleteHike = (deletedHike) => {
-    axios.delete("http://localhost:3000/hiking/" + deletedHike._id)
-    .then((response) => {
-      let newHikes = hikes.filter((hike) => {
-        return hike._id !== deletedHike._id
-      })
-      setHikes(newHikes)
-    })
-  }
-  const handleEditHike = (data) => {
-    axios.put("http://localhost:3000/hiking/" + data._id, data)
-    .then((response) => {
-      console.log(response)
-      let newHike = hikes.map((hike) => {
-        return hike._id !== data._id ? hike : data
-      })
-      setHikes(newHike)
-    })
-  }
+  // const getHikes = () => {
+  //   axios.get("http://localhost:3000/hiking")
+  //   .then((response) => setHikes(response.data), 
+  //   (err) => console.log(err))
+  //   .catch((error) => console.log(error))
+  // }
+
+  // const handleCreateHike = (data) => {
+  //   axios.post("http://localhost:3000/hiking", data).then((response) => {
+  //     console.log(response);
+  //     let newHikes = [...hikes, response.data]
+  //     setHikes(newHikes)
+  //   })
+  // }
+  // const handleDeleteHike = (deletedHike) => {
+  //   axios.delete("http://localhost:3000/hiking/" + deletedHike._id)
+  //   .then((response) => {
+  //     let newHikes = hikes.filter((hike) => {
+  //       return hike._id !== deletedHike._id
+  //     })
+  //     setHikes(newHikes)
+  //   })
+  // }
+  // const handleEditHike = (data) => {
+  //   axios.put("http://localhost:3000/hiking/" + data._id, data)
+  //   .then((response) => {
+  //     console.log(response)
+  //     let newHike = hikes.map((hike) => {
+  //       return hike._id !== data._id ? hike : data
+  //     })
+  //     setHikes(newHike)
+  //   })
+  // }
   
 
-  useEffect(() => {
-    getCamps();
-    getHikes();
-  }, [])
+  // useEffect(() => {
+  //   getCamps();
+  //   getHikes();
+  // }, [])
   
-const testing = () =>{
-  getHikes()
+// const testing = () =>{
+//   getHikes()
 
 
-}
+// }
 
   return (
     <>
@@ -110,8 +111,8 @@ const testing = () =>{
           </>
         )
       })}
-      <AddHike handleCreateHike={handleCreateHike} />
-      <AddCamp handleCreateHike={handleCreateHike}/>
+      <AddHike handleCreate={handleCreateHike} />
+      <AddCamp handleCreate={handleCreateCamp}/>
     </>
   )
 }
