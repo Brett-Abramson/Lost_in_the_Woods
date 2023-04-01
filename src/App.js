@@ -3,7 +3,7 @@ import {useState, useEffect} from "react"
 // import PORT from ".../project_3_backend/server.js"
 import axios from "axios"
 import Camp from "./components/camping/camp"
-import HikeIndex from './components/hiking/hike'
+import HikeIndex from "./components/hiking/hike"
 import Hike from "./components/hiking/show"
 import Home from"./components/home"
 import AddHike from "./components/hiking/add"
