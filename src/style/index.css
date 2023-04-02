@@ -33,9 +33,9 @@
     cursor: pointer;
 }
 
-.add-hike{
-    font-family: 'Halant', sans-serif;
-    font-size: 25px;                                               
+.add-item{
+    font-family: 'Halant', sans-serif;  
+    font-size: 30px;                                           
 }
 
 input[type=text], .input-field {
@@ -47,10 +47,47 @@ input[type=text], .input-field {
     border: 1px solid white;
     /* border-radius: 14px; */
     box-sizing: border-box;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Halant', sans-serif;
     
   }
+
+  fieldset {
+   border:0;
+}
+
+.tag-container-options {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-size: 20px;  
+}
+
+.radio-options {
+    font-size: 20px;  
+    margin-left: 5px;
+}
+
+
+.add-description{
+    width: 100%;
+    height: 150px;
+    font-size: 20px; 
+    font-family: 'Halant', sans-serif;
+    border: 2px solid white;
+}
+
+.submit-button{
+    background-color: #F57940;
+    border: none;
+    border-radius: 50px;
+    width: 20%;
+    padding: 2%;
+    margin: 5% 0;
+    margin-right: 15px;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: 'Trykker', sans-serif;
+}
 
 @media screen and (max-width: 900px) {
     .card-container{

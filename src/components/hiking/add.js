@@ -52,7 +52,8 @@ const AddHike = (props) => {
 
     return (
         <>
-        <div className="add-hike">
+        <div className="add-item">
+            <h1>Add a New Hike</h1>
             <form onSubmit={handleSubmit}>
 
                 <label className="add-name" htmlFor="name">Name</label><br/>
@@ -83,9 +84,9 @@ const AddHike = (props) => {
                 <input className="input-field"  type="number" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
                 <br />
 
-                <fieldset>
+                <fieldset >
                     <legend>How difficult was the hike?</legend> 
-
+<div className="radio-options">
                     <label htmlFor="easy">Easy</label>
                     <input type="radio" name="difficulty" id="easy" value="easy" />
          
@@ -96,12 +97,12 @@ const AddHike = (props) => {
 
                     <label htmlFor="hard">Hard</label>
                     <input type="radio" name="difficulty" id="hard" value="hard" /> 
-          
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>What kind of hike was it?</legend> 
-
+                    <div className="radio-options">
                     <label htmlFor="thru-hike">Easy</label>
                     <input type="radio" name="routeType" id="thru-hike" value="thru-hike" />
         
@@ -112,12 +113,13 @@ const AddHike = (props) => {
 
                     <label htmlFor="loop">Loop</label>
                     <input type="radio" name="routeType" id="loop" value="loop" /> 
-        
+                    </div>
                 </fieldset>
 
                 
                 <div className="tag-container">
                     <legend>Was it..</legend>
+                    <div className="tag-container-options">
                     <div>
                         <input type="checkbox" id="quick" name="quick" value=""  onChange={handleChange} />
                         <label htmlFor="quick">Quick</label>
@@ -166,9 +168,15 @@ const AddHike = (props) => {
                         <input type="checkbox" id="Free Parking" name="Free Parking" value=""  onChange={handleChange} />
                         <label htmlFor="Free Parking">Free Parking</label>
                     </div>
+                    </div>
                 </div>
-                <button type="submit">Add Hike</button>
+
+                <label htmlFor="decription">Description</label><br/>
+                <textarea className="add-description" type="text" name="decription" id="decription" rows="4" cols="50" placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What should others know?" onChange={handleChange} />
+                <br />
+                <button className="submit-button" type="submit">Add Hike</button>
             </form>
+            
             </div>
         </>
 

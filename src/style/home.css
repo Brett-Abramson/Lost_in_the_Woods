@@ -1,38 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Halant:wght@300;700&family=Inria+Serif&display=swap');
 @import url('https://fonts.cdnfonts.com/css/trykker');
 
-                
-/* font-family: 'Halant', serif;
-font-family: 'Inria Serif', serif; */
-
-/* .navbar {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-right: 10%;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Halant", serif;
-}
-.nav-title {
-  width: 50%;
-  margin-left: 15%;
-}
-.nav-links {
-  width: 50%;
-  margin-right: 8%;
-  display: flex;
-  justify-content: space-evenly;
-}
-.nav-links > a {
-  margin: 0 5%;
-  text-decoration: none;
-  color: black;
-  font-family: "Halant-bold, serif";
-}
-.nav-links > a:active {
-  text-decoration: underline;
-} */
+              
 
 main {
   display: flex;
