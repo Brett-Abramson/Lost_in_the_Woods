@@ -4,13 +4,23 @@ const Camp = (props) => {
     return(
         <>
         <div className="page-container">
-
+        <hr id="hr-above-bar"/>
+                <nav className="navbar-hike">
+                    <a>hiking man</a>
+                    <a>add</a>
+                    <a>electirc</a>
+                    <a>laundry</a>
+                    <a>pet friendly</a>
+    
+                </nav>
+                <hr id="hr-below-bar"/>
             <main>
                 <div className="card-container">
                     {props.camps.map((camp) => {
                         return (
                             <div className="card">
                                 <div className="card-image">
+                                <button className="delete-button" onClick={()=>{props.handleDelete(camp)}}>X</button><br/>
                                     <img src="{camp.name}" alt={"picture of " + camp.name} />
                                 </div>
                                 <div className="card-text">
@@ -19,7 +29,6 @@ const Camp = (props) => {
                                     <p>{camp.campType}</p>
                                     <p>{camp.easeOfBooking}</p>
                                 </div>
-                                <button className="delete-button" onClick={()=>{props.handleDelete(camp)}}>X</button>
                             </div>
                         )
                     })}

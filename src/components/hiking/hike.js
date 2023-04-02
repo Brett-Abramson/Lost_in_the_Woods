@@ -9,12 +9,23 @@ const HikeIndex = (props) => {
         <>
         <main>
             <div className="page-container">
+<hr id="hr-above-bar"/>
+                <nav className="navbar-hike">
+                    <a>hiking man</a>
+                    <a>add</a>
+                    <a>parking filter</a>
+                    <a>pet friednly</a>
+                    <a>kid friendly</a>
+    
+                </nav>
+                <hr id="hr-below-bar"/>
                 <div className="card-container">
                     {props.hikes.map((hike) => {
                         return (
 
                             <div className="card">
                                 <div className="card-image">
+                                <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
                                     <img src="" alt={"picture of " + hike.name} />
                                 </div>
                                 <div className="card-text">
@@ -23,7 +34,7 @@ const HikeIndex = (props) => {
                                     <p>{hike.difficulty}</p>
                                     <p>{hike.distance} miles</p>
                                 </div>
-                                <button onClick={()=>{props.handleDelete(hike)}}>Delete Hike</button>
+
                             </div>
                         
                             
