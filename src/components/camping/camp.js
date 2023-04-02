@@ -14,12 +14,12 @@ const Camp = (props) => {
                                     <img src="{camp.name}" alt={"picture of " + camp.name} />
                                 </div>
                                 <div className="card-text">
-                                    <a href="/camping/.id">{camp.name}</a>
+                                    <h3 className="card-name">{camp.name}</h3>
                                     <p>{camp.location}</p>
                                     <p>{camp.campType}</p>
                                     <p>{camp.easeOfBooking}</p>
                                 </div>
-                                <button onClick={()=>{props.handleDelete(camp)}}>Delete Camp</button>
+                                <button className="delete-button" onClick={()=>{props.handleDelete(camp)}}>X</button>
                             </div>
                         )
                     })}

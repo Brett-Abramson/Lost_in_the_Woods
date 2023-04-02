@@ -109,12 +109,7 @@ const App = () => {
     getCamps();
     getHikes();
   }, [])
-  
-const testing = () =>{
-  getHikes()
 
-
-}
 
 //====hidden=====
 const [hidden1, setHidden1] = useState("visible");
