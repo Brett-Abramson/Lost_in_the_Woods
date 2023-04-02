@@ -11,13 +11,13 @@
 .nav-title {
   width: 50%;
   margin-left: 15%;
-  font-size: 20px;
+  font-size: 4vh;
   font-weight: bold;
 }
 
 .nav-links {
   width: 50%;
-  margin-right: 8%;
+  margin-right: 12%;
   display: flex;
   justify-content: space-evenly;
 }
