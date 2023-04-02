@@ -38,7 +38,7 @@ const Home = () => {
                 </div>
                 <div className="right-side">
                     <div className="home-image-container">
-                        <img src="hiking-main-icon.png" alt="people hiking on a nature trail"></img>
+                        <img src="landing-page-photo.png" alt="people hiking on a nature trail"></img>
                     </div>
                 </div>
             </main>
