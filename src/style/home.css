@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Halant:wght@300;700&family=Inria+Serif&display=swap');
+@import url('https://fonts.cdnfonts.com/css/trykker');
 
+                
 /* font-family: 'Halant', serif;
 font-family: 'Inria Serif', serif; */
 
-.navbar {
+/* .navbar {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -30,7 +32,7 @@ font-family: 'Inria Serif', serif; */
 }
 .nav-links > a:active {
   text-decoration: underline;
-}
+} */
 
 main {
   display: flex;
@@ -43,10 +45,13 @@ main {
   display: flex;
   flex-direction: column;
 }
+
 .home-add-buttons {
   display: flex;
   justify-content: space-around;
+  
 }
+
 .home-add-btns {
   background-color: #F57940;
   border: none;
@@ -54,14 +59,15 @@ main {
   width: 28%;
   padding: 2%;
   margin: 5% 0;
-  font-family: "Inria Serif", serif;
+  font-family: 'Trykker', sans-serif;
+                                                
 }
 .home-add-btns:hover {
   box-shadow: 1px 2px rgba(0,0,0,.3);
   cursor: pointer;
 }
 .home-description-text {
-  font-family: "Halant-light", serif;
+  font-family: 'Trykker', sans-serif;                           
   font-size: large;
 }
 .home-section-descriptions > h3 {
@@ -69,7 +75,7 @@ main {
   
 }
 .home-section-descriptions > p {
-  font-family: "Inria Serif", serif;
+  font-family: 'Trykker', sans-serif;                                         
   margin: 0;
   font-size: smaller;
 }

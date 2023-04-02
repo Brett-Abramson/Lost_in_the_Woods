@@ -6,7 +6,7 @@ const Home = () => {
 
     return(
         <div className="home-page">
-            <div className="navbar">
+            {/* <div className="navbar">
                 <div className="nav-title">
                     <h2>Lost in the woods</h2>
                 </div>
@@ -15,7 +15,7 @@ const Home = () => {
                     <a href="#"><h3>Hiking</h3></a>
                     <a href="#"><h3>Camping</h3></a>
                 </div>
-            </div>
+            </div> */}
             <main>
                 <div className="left-side">
                     <div className="home-slogan">
@@ -38,7 +38,7 @@ const Home = () => {
                 </div>
                 <div className="right-side">
                     <div className="home-image-container">
-                        <img src="" alt="people hiking on a nature trail"></img>
+                        <img src="hikin" alt="people hiking on a nature trail"></img>
                     </div>
                 </div>
             </main>

@@ -8,7 +8,6 @@ import Hike from "./components/hiking/show"
 import Home from"./components/home"
 import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
-import TestAddComment from './components/hiking/TEST-add-comment';
 import EditHike from './components/hiking/edit';
 
 const App = () => {
@@ -64,6 +63,7 @@ const App = () => {
     (err) => console.log(err))
     .catch((error) => console.log(error))
   }
+
   const handleCreateHike = (data) => {
     axios.post("http://localhost:3000/hiking", data).then((response) => {
       console.log(response);
@@ -138,24 +138,32 @@ const showHikePage = () => {
 };
 
   return (
-    <>
-      <>
-        {/* <Home /> */}
-      </>
+    
+    <div>
+            <div className="navbar">
+                <div className="nav-title">
+                    <p>Lost in the woods</p>
+                </div>
+                <div className="nav-links">
+                <button className="buttons-style" onClick={showCampPage}>Camp</button>
+      <button className="buttons-style" onClick={showHikePage}>Hike</button>
+      <button className="buttons-style" onClick={showHomePage}>Home</button>
+                </div>
+            </div>
       {/* <button class="buttons-style" onClick={showHike}>See Hikes</button>
       <button class="buttons-style" onClick={showCamp}>See Camps</button> */}
-      <button class="buttons-style" onClick={showCampPage}>Camp</button>
+      {/* <button class="buttons-style" onClick={showCampPage}>Camp</button>
       <button class="buttons-style" onClick={showHikePage}>Hike</button>
-      <button class="buttons-style" onClick={showHomePage}>Home</button>
+      <button class="buttons-style" onClick={showHomePage}>Home</button> */}
 
-<div class={hidden1}>
+<div className={hidden1}>
  <Home />
  </div>
-      <div class={hidden2}>
+      <div className={hidden2}>
               <Camp  camps={camps} handleDelete={handleDeleteCamp}/>
       </div>
 
-      <div class={hidden3}>
+      <div className={hidden3}>
               <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} />
           {hikes.map((hikes) => {
         return (
@@ -170,7 +178,8 @@ const showHikePage = () => {
 
       {/* <AddCamp handleCreate={handleCreateCamp} /> */}
 
-    </>
+   
+    </div>
   )
 }
 

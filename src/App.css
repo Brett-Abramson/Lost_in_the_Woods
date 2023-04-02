@@ -1,13 +1,66 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-right: 10%;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Halant", serif;
+}
+
+.nav-title {
+  width: 50%;
+  margin-left: 15%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  width: 50%;
+  margin-right: 8%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-links > a {
+  margin: 0 5%;
+  text-decoration: none;
+  color: black;
+  font-family: "Halant-bold, serif";
+}
+
+.nav-links > a:active {
+  text-decoration: underline;
+}
+
 .hidden {
     display: none;
   }
+
   .visible {
     display: block;
   }
+
   #hidden {
     visibility: hidden;
     height: 0;
   }
+
   #visible {
     visibility: visible;
+  }
+
+  .buttons-style{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Halant', sans-serif;
+    font-weight: bold;
   }
