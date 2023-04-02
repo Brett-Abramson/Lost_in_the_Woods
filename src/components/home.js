@@ -40,17 +40,7 @@ const Home = () => {
       };
     return(
         <div className="home-page">
-            {/* <div className="navbar">
-                <div className="nav-title">
-                    <h2>Lost in the woods</h2>
-                </div>
-                <div className="nav-links">
-                    <a href="#"><h3>Home</h3></a>
-                    <a href="#"><h3>Hiking</h3></a>
-                    <a href="#"><h3>Camping</h3></a>
-                </div>
-            </div> */}
-            <main>
+            <main className="home-page">
                 <div className="left-side">
                     <div className="home-slogan">
                         <h1>Let's go on an adventure</h1>
@@ -100,7 +90,7 @@ const Home = () => {
                     <div className="home-image-container">
                         <img src="landing"/>
 
-                        <img src="photos/landing-page-photo" alt="people hiking on a nature trail"/>
+                        <img src="https://i.imgur.com/UFbMBDM.png" alt="people hiking on a nature trail"/>
                     </div>
                 </div>
             </main>

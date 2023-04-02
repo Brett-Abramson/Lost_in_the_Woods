@@ -3,12 +3,14 @@ import {useState, useEffect} from "react"
 // import PORT from ".../project_3_backend/server.js"
 import axios from "axios"
 import Camp from "./components/camping/camp"
-import HikeIndex from "./components/hiking/hike"
-import Hike from "./components/hiking/show"
+import HikeIndex from "./components/hiking/HikeIndex"
+import HikeShowPage from "./components/hiking/HikeShowPage"
 import Home from"./components/home"
 import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
 import EditHike from './components/hiking/edit';
+
+import { Routes, Route} from 'react-router-dom'
 
 const App = () => {
 //===hide and show====
@@ -64,19 +66,26 @@ const App = () => {
     .catch((error) => console.log(error))
   }
 
-  const handleCreateHike = (data) => {
-    axios.post("http://localhost:3000/hiking", data).then((response) => {
-      console.log(response);
-      let newHikes = [...hikes, response.data]
-      setHikes(newHikes)
-    })
-  }
   const handleDeleteHike = (deletedHike) => {
     axios.delete("http://localhost:3000/hiking/" + deletedHike._id)
     .then((response) => {
       let newHikes = hikes.filter((hike) => {
         return hike._id !== deletedHike._id
       })
+      setHikes(newHikes)
+    })
+  }
+
+  const handleShowHike = (showIndHike) => {
+    console.log(showIndHike)
+  // let hike =hikes.filter((showIndHike))
+  return(<HikeShowPage hikes = {showIndHike}/>)
+  }
+
+  const handleCreateHike = (data) => {
+    axios.post("http://localhost:3000/hiking", data).then((response) => {
+      console.log(response);
+      let newHikes = [...hikes, response.data]
       setHikes(newHikes)
     })
   }
@@ -91,18 +100,6 @@ const App = () => {
     })
   }
 
-  // const showHike = () => {
-  //   show ? setShow(false) : setShow(true);
-  // }
-
-  // const showCamp = () => {
-  //   see ? setSee(false) : setSee(true);
-  // }
-
-  // const showHome = () => {
-  //   seeHome ? setSee(true) : setSeeHome(false);
-
-  // }
   
 
   useEffect(() => {
@@ -133,6 +130,9 @@ const showHikePage = () => {
 };
 
   return (
+
+    //
+    
     
     <div>
             <div className="navbar">
@@ -145,12 +145,6 @@ const showHikePage = () => {
       <button className="buttons-style" onClick={showHomePage}>Home</button>
                 </div>
             </div>
-      {/* <button class="buttons-style" onClick={showHike}>See Hikes</button>
-      <button class="buttons-style" onClick={showCamp}>See Camps</button> */}
-      {/* <button class="buttons-style" onClick={showCampPage}>Camp</button>
-      <button class="buttons-style" onClick={showHikePage}>Hike</button>
-      <button class="buttons-style" onClick={showHomePage}>Home</button> */}
-
 <div className={hidden1}>
  <Home />
  </div>
@@ -159,15 +153,8 @@ const showHikePage = () => {
       </div>
 
       <div className={hidden3}>
-              <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} />
-          {hikes.map((hikes) => {
-        return (
-          <>
-            <Hike hikes={hikes}  />
-            <EditHike hike={hikes} handleEdit={handleEditHike} />
-          </>
-        )
-      })}
+              <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} handleShow={handleShowHike}/>
+         
       </div>
       {/* <AddHike handleCreate={handleCreateHike}/> */}
 

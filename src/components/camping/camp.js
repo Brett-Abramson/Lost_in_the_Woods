@@ -6,7 +6,8 @@ const Camp = (props) => {
         <div className="page-container">
         <hr id="hr-above-bar"/>
                 <nav className="navbar-hike">
-                    <a>hiking man</a>
+                    <img src="https://i.imgur.com/1WAoQcg.png" alt="tent"/>
+                    <img src={process.env.PUBLIC_URL + './photos/add.png'} alt="add a campsite"></img>
                     <a>add</a>
                     <a>electirc</a>
                     <a>laundry</a>
