@@ -1,6 +1,7 @@
 import "../style/home.css"
 
 
+
 const Home = () => {
 
 
@@ -38,7 +39,9 @@ const Home = () => {
                 </div>
                 <div className="right-side">
                     <div className="home-image-container">
-                        {/* <img src="landing-page-photo.png" alt="people hiking on a nature trail"></img> */}
+                        <img src="landing"/>
+
+                        <img src="{couple}" alt="people hiking on a nature trail"/>
                     {/* <p>hiiiiiiiiiiiiiiiiiiiiiiiiiiii</p> */}
                     </div>
                 </div>
