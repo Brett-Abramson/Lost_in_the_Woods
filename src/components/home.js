@@ -38,7 +38,7 @@ const Home = () => {
                 </div>
                 <div className="right-side">
                     <div className="home-image-container">
-                        <img src="" alt="people hiking on a nature trail"></img>
+                        <img src={process.env.PUBLIC_URL + './photos/general-convience-store-icon.png'} alt="people hiking on a nature trail"></img>
                     </div>
                 </div>
             </main>
