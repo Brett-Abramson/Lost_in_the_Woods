@@ -10,7 +10,7 @@ import AddHike from "./components/hiking/add"
 import AddCamp from "./components/camping/add"
 import EditHike from './components/hiking/edit';
 
-import { Routes, Route} from 'react-router-dom'
+// import { Routes, Route} from 'react-router-dom'
 
 const App = () => {
 //===hide and show====
