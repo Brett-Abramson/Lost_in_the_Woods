@@ -10,14 +10,10 @@ import axios from "axios"
 const HikeIndex = (props) => {  
     const [showHike, setShowHike] = useState(props.hikes.map(hike => false))    
 
-    // const toggleIndHike = () => {
-    //     setShowIndHike(!showIndHike);
-    //   };
     const [hikes, setHikes] = useState([])
 
     const [showAddHike, setshowAddHike] = useState(false);
 
-    // for (let i = 0; i < props.hikes.length; i++){
   
 
     const handleCreateHike = (data) => {
@@ -35,18 +31,6 @@ const HikeIndex = (props) => {
 
 
       //=======hidden======
-    const [hidden1, setHidden1] = useState("visible");
-    const [hidden2, setHidden2] = useState("hidden");
-
-
-    const showIndexPage = () => {
-        setHidden1("hidden");
-        setHidden2("visible");
-      };
-      const showSinglePage = () => {
-        setHidden1("visible");
-        setHidden2("hidden");
-      };
 
 
     return (
@@ -90,7 +74,7 @@ const HikeIndex = (props) => {
 
             
 
-    <button onClick={showIndexPage}>show all</button>
+  
 
                 </nav>
                 <hr id="hr-below-bar-hike"/>
@@ -106,10 +90,10 @@ const HikeIndex = (props) => {
 
                         return (
 
-<div className={hidden2}>
+
                             <div className="card">
 
-                                <button onClick={showSinglePage}>Show single</button>
+                                
                                 <button onClick={()=> {
                                     // this is saying set your show variable  to be true or false
                                     // copying the array of boolean variables
@@ -127,8 +111,7 @@ const HikeIndex = (props) => {
                             </button>
                             
                             {/* only show the one we want to show */}
-                            <div className={hidden1}>
-                            </div>
+                            
                             {/* {showHike[index] && <HikeShowPage hike={hike} />} */}
                             
                                 <div className="card-image">
@@ -144,7 +127,7 @@ const HikeIndex = (props) => {
  {/* <HikeShowPage hike={hike}/>  */}
                             </div>
                             
-                            </div>
+                        
                         
                         )
                         
