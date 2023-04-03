@@ -26,17 +26,35 @@ const HikeIndex = (props) => {
     return (
         <>
         <main>
-            <div className="page-container">
-<hr id="hr-above-bar"/>
+    
+                <div className="">
+    <hr id="hr-above-bar-hike"/>
                 <nav className="navbar-hike">
-                    <a>hiking man</a>
-                    <a>add</a>
-                    <a>parking filter</a>
-                    <a>pet friednly</a>
-                    <a>kid friendly</a>
+                <div className="nav-bar-photo-and-text" id="hiker-background">
+                <img src="https://i.imgur.com/dwHSPgj.png" alt="hiking man" id="hiker"/>
+                <p id="hiking-man-text">Hiking</p>
+                </div>
+                <div className="nav-bar-photo-and-text" >
+                <img src="https://i.imgur.com/jRAPlMA.png" alt="add" id="add-hike"/>
+                <p>Add hike</p>
+                </div>
+                <div className="nav-bar-photo-and-text" >
+                <img src="https://i.imgur.com/NNaDgju.png" alt="parking filter" id="parking"/>
+                <p>Parking</p>
+                </div >
+                <div className="nav-bar-photo-and-text" >
+                <img src="https://i.imgur.com/g9mXD0D.png" alt="kid friendly" id="kids"/>
+                <p>Kid Friendly</p>
+                </div>
+                <div className="nav-bar-photo-and-text">
+                <img src="https://i.imgur.com/Ydl3t1q.png"  id="pets" alt="pet friendly"/>
+                <p>Pet Friendly</p>
+                </div>
     
                 </nav>
-                <hr id="hr-below-bar"/>
+                <hr id="hr-below-bar-hike"/>
+    
+                
                 <div className="card-container">
                     
 

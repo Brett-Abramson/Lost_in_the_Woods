@@ -1,21 +1,39 @@
 import "../../style/index.css"
+import "../../style/home.css"
+
 
 const Camp = (props) => {
     return(
         <>
-        <div className="page-container">
-        <hr id="hr-above-bar"/>
-                <nav className="navbar-hike">
-                    <img src="https://i.imgur.com/1WAoQcg.png" alt="tent"/>
-                    <img src={process.env.PUBLIC_URL + './photos/add.png'} alt="add a campsite"></img>
-                    <a>add</a>
-                    <a>electirc</a>
-                    <a>laundry</a>
-                    <a>pet friendly</a>
+        {/* <div className="page-container"> */}
+        <main>
+            
+                <hr id="hr-above-bar"/>
+                <nav className="navbar-camp">
+                <div className="nav-bar-photo-and-text" id="hiker-background">
+                <img src="https://i.imgur.com/dwHSPgj.png" alt="hiking man" id="hiker"/>
+                <p id="hiking-man-text">Hiking</p>
+                </div>
+                <div className="nav-bar-photo-and-text" >
+                <img src="https://i.imgur.com/jRAPlMA.png" alt="add" id="add-hike"/>
+                <p>Add hike</p>
+                </div>
+                <div className="nav-bar-photo-and-text" >
+                <img src="https://i.imgur.com/NNaDgju.png" alt="parking filter" id="parking"/>
+                <p>Parking</p>
+                </div >
+                <div className="nav-bar-photo-and-text" >
+                <img src="https://i.imgur.com/g9mXD0D.png" alt="kid friendly" id="kids"/>
+                <p>Kid Friendly</p>
+                </div>
+                <div className="nav-bar-photo-and-text">
+                <img src="https://i.imgur.com/Ydl3t1q.png"  id="pets" alt="pet friendly"/>
+                <p>Pet Friendly</p>
+                </div>
     
                 </nav>
                 <hr id="hr-below-bar"/>
-            <main>
+            
                 <div className="card-container">
                     {props.camps.map((camp) => {
                         return (
@@ -35,7 +53,7 @@ const Camp = (props) => {
                     })}
                 </div>
             </main>
-        </div>
+        {/* </div> */}
         </>
     )
 }

@@ -95,6 +95,18 @@ input[type=text], .input-field {
     border: 2px solid black;
 }
 
+#hr-above-bar-hike{
+    width: 100%;
+    border: 2px solid black;
+}
+
+#hr-below-bar-hike{
+    height: 10px;
+    width: 100%;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
 #hr-below-bar{
     height: 10px;
     width: 70%;
@@ -102,22 +114,81 @@ input[type=text], .input-field {
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 
-.navbar-hike {
+.navbar-hike{
     width: 70%;
-    margin-left: 15%;
     text-align: center;
     padding: 12px 0;
     transition: all 0.3s ease;
     color: black;
     display: flex;
     flex-direction: row;
-    height: 8vh;
+    height: 14vh;
     justify-content: space-between;
+    align-items: center;
+    font-family: "Halant", serif;  
+}
+
+
+.navbar-camp {
+    width: 70%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    height: 14vh;
+    justify-content: start;
     align-items: center;
     font-family: "Halant", serif;
 }
 
-.navbar-hike a:hover {
+.nav-bar-photo-and-text{
+    padding-top: 3%;
+    margin-right: 15px;
+}
+#hiking-man-text{
+    margin-bottom: 10px;
+}
+.nav-bar-photo-and-text p{
+    font-size: 1.1em;
+}
+
+ #hiker-background{
+    background-color: #E7E9EC;
+    /* margin-top: 5%;
+    margin-bottom: 5%; */
+    height: 145%;
+    width: 90px;
+ }
+
+#hiker{
+    width:80px;
+    height:50px;
+}
+
+#add-hike{
+    width:70px;
+    height:60px;
+}
+
+#parking{
+    width:100px;
+    height:60px;
+}
+
+#kids{
+    width:60px;
+    height:60px;
+}
+
+#pets{
+    width:100px;
+    height:60px;
+}
+
+
+.navbar-camp a:hover {
     background-color: #000;
   }
 
@@ -135,4 +206,19 @@ input[type=text], .input-field {
       grid-template-columns: auto auto;
       padding: 10px 30px;
     }
+    .nav-bar-photo-and-text{
+        padding-top: 5%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .card-container{
+      display: grid;
+      grid-template-columns: auto;
+      padding: 10px 30px;
+    }
+
+/* 
+    follow this to make nav bars responsive
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar */
   }

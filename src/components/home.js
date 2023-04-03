@@ -40,7 +40,7 @@ const Home = () => {
       };
     return(
         <div className="home-page">
-            <main className="home-page">
+            <div className="home-page">
                 <div className="left-side">
                     <div className="home-slogan">
                         <h1>Let's go on an adventure</h1>
@@ -87,13 +87,14 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="right-side">
+      
                     <div className="home-image-container">
-                        <img src="landing"/>
-
-                        <img src="https://i.imgur.com/UFbMBDM.png" alt="people hiking on a nature trail"/>
+                      <div className="box">
+                        <img className="home-page-photo" src="https://i.imgur.com/UFbMBDM.png" alt="people hiking on a nature trail"/>
+                        </div>
                     </div>
                 </div>
-            </main>
+            </div>
 
 
         </div>

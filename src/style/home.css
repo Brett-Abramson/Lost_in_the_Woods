@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Halant:wght@300;700&family=Inria+Serif&display=swap');
 @import url('https://fonts.cdnfonts.com/css/trykker');
 
-              
-
-/* .home-page,  */
 main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  /* margin-left: 2%; */
-  /* width: 70%; */
+}            
+
+.home-page {
+  display: flex;
+  margin-left: 105px;
 }
+
 
 .left-side {
   font-family: "Halant", serif;
@@ -51,17 +52,20 @@ main {
   margin: 0;
   font-size: smaller;
 }
-/* .home-image-container{
-  background-image: url(landing-page-photo.png)
-} */
 
-/* .right-side{
-  background-image: url(landing-page-photo.png);
-  width: 500px;
-  height: 600px;
-  background-repeat: no-repeat;
-  margin-right: 10px;
-} */
+.right-side{
+display: flex;
+flex-wrap: wrap;
+}
+
+.box{
+  margin: 5px;
+}
+
+.home-page-photo {
+  width: 100%;
+}
+
 
 body.active-modal {
   overflow-y: hidden;
@@ -86,7 +90,6 @@ body.active-modal {
 
 .modal{
   overflow-y: auto;
-  /* margin-top: 100px; */
 }
 
 .overlay {
@@ -103,8 +106,6 @@ body.active-modal {
   border-radius: 3px;
   width: 800px;
   height: 800px;
-  /* max-width: 600px; */
-  /* min-width: 300px; */
   margin-top: 100px;
   overflow: auto;
 }
@@ -114,4 +115,31 @@ body.active-modal {
   top: 10px;
   right: 10px;
   padding: 5px 7px;
+}
+
+@media screen and (max-width: 1100px) {
+  .home-page {
+    margin-left: 77px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-page {
+    margin-left: 65px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home-page {
+    flex-wrap: wrap;
+    margin-left: 40px;
+  }
+  .home-page-photo {
+    width: 90%;
+  }
+
+  .left-side {
+    width: 90%;
+
+  }
 }
