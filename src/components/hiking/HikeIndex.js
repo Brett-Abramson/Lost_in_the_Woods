@@ -11,7 +11,7 @@ const HikeIndex = (props) => {
     const [showHike, setShowHike] = useState(props.hikes.map(hike => false))    
 
     const [hikes, setHikes] = useState([])
-
+    const [i, setI] = useState(null)
     const [showAddHike, setshowAddHike] = useState(false);
 
   
@@ -102,10 +102,9 @@ const HikeIndex = (props) => {
                                     newShowHike[index] = !newShowHike[index]
                                     // change the state of the individual boolean
                                     setShowHike(newShowHike)
-
                                     
-                                }} >
-            
+                                    setI(index)
+                                }}>
                                 {/* only change the button of the one we want to change */}
                                 {showHike[index] ? "Hide" : "Show"}
                             </button>
@@ -135,12 +134,7 @@ const HikeIndex = (props) => {
                 </div>
 
             </div>
-{hikes.map((hikes, index)=> {
-
-{showHike[index] && <HikeShowPage hike={hikes} />}
-})
-
-}
+              {showHike[i] && <HikeShowPage hike={props.hikes[i]} />}
             </main>
         
         </>
