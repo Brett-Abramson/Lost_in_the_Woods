@@ -29,13 +29,6 @@ const App = () => {
     .catch((error) => console.log(error))
     }
   
-    const handleCreateCamp = (data) => {
-      axios.post("http://localhost:3000/camping", data).then((response) => {
-        console.log(response);
-        let newCamps = [...camps, response.data]
-        setCamps(newCamps)
-      })
-    }
   const handleDeleteCamp = (deletedCamp) => {
     axios.delete("http://localhost:3000/camping/" + deletedCamp._id)
     .then((response) => {
@@ -43,16 +36,6 @@ const App = () => {
         return camp._id !== deletedCamp._id
       })
       setCamps(newCamps)
-    })
-  }
-  const handleEditCamp = (data) => {
-    axios.put("http://localhost:3000/camping/" + data._id, data)
-    .then((response) => {
-      console.log(response)
-      let newCamp = camps.map((camp) => {
-        return camp._id !== data._id ? camp : data
-      })
-      setCamps(newCamp)
     })
   }
 
@@ -141,21 +124,34 @@ const showHikePage = () => {
                 </div>
                 <div className="nav-links">
                 <button className="buttons-style" onClick={showCampPage}>Camp</button>
-      <button className="buttons-style" onClick={showHikePage}>Hike</button>
+      <button className="buttons-style" onClick={showHikePage}>Hike</button> 
+      {/* !!!!!!! need to add this other button into hikeindex somehow? */}
       <button className="buttons-style" onClick={showHomePage}>Home</button>
                 </div>
             </div>
 <div className={hidden1}>
  <Home />
  </div>
+
       <div className={hidden2}>
               <Camp  camps={camps} handleDelete={handleDeleteCamp}/>
       </div>
 
       <div className={hidden3}>
               <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} handleShow={handleShowHike}/>
-         
       </div>
+
+{/* <div>
+  <HikeIndex PORT={PORT}/>
+</div> */}
+
+{/* {
+      hikes.map((hike) => {
+
+        return <HikeShowPage hike={hike}/>
+      })
+
+    } */}
       {/* <AddHike handleCreate={handleCreateHike}/> */}
 
       {/* <AddCamp handleCreate={handleCreateCamp} /> */}
