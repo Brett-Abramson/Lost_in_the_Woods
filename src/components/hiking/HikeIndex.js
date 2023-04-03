@@ -19,8 +19,8 @@ const HikeIndex = (props) => {
     // const toggleIndHike = () => {
     //     setShowIndHike(!showIndHike);
     //   };
-    const [hikes, setHikes] = useState([])
-
+    const [hikes, setHikes] = useState([...props.hikes])
+    const [i, setI] = useState(null)
     const [showAddHike, setshowAddHike] = useState(false);
 
     // for (let i = 0; i < props.hikes.length; i++){
@@ -103,12 +103,13 @@ const HikeIndex = (props) => {
                                     newShowHike[index] = !newShowHike[index]
                                     // change the state of the individual boolean
                                     setShowHike(newShowHike)
+                                    setI(index)
                                 }}>
                                 {/* only change the button of the one we want to change */}
                                 {showHike[index] ? "Hide" : "Show"}
                             </button>
                             {/* only show the one we want to show */}
-                            {showHike[index] && <HikeShowPage hike={hike} />}
+                            {/* {showHike[index] && <HikeShowPage hike={hike} />} */}
                                 <div className="card-image">
                                 <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
                                     <img src="" alt={"picture of " + hike.name} />
@@ -119,15 +120,19 @@ const HikeIndex = (props) => {
                                     <p>{hike.difficulty}</p>
                                     <p>{hike.distance} miles</p>
                                 </div>
-                            <HikeShowPage hike={hike}/>
+                            {/* <HikeShowPage hike={hike}/> */}
                             </div>
                         
-                            
                         )
                     })}
                 </div>
 
             </div>
+
+                      {showHike[i] && <HikeShowPage hike={props.hikes[i]} />}
+                  
+
+        
             </main>
         
         </>
