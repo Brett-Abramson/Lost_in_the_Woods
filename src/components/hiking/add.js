@@ -1,4 +1,6 @@
 import {useState} from "react"
+import "../../style/index.css"
+
 
 const AddHike = (props) => {
     const [hike,setHike] = useState ({
@@ -50,70 +52,74 @@ const AddHike = (props) => {
 
     return (
         <>
+        <div className="add-item">
+            <h1>Add a New Hike</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name</label>
+
+                <label className="add-name" htmlFor="name">Name</label><br/>
                 <input type="text" name="name" id="name" placeholder="What is the name of the trail" onChange={handleChange} />
                 <br />
 
-                <label htmlFor="photo">Add a photo of the trail </label>
+                <label htmlFor="photo">Add a photo of the trail </label><br/>
                 <input type="text" name="photo" id="photo" placeholder="Add a photo of the trail" onChange={handleChange} />
                 <br/>
 
-                <label htmlFor="location">Location </label>
+                <label htmlFor="location">Location </label><br/>
                 <input type="text" name="location" id="location" placeholder="What is the address of the trail?" onChange={handleChange} />
                 <br />
 
-                <label htmlFor="mapIntegration">Google Maps Link </label>
+                <label htmlFor="mapIntegration">Google Maps Link </label><br/>
                 <input type="text" name="mapIntegration" id="mapIntegration" placeholder="Add the link for directions to the trail" onChange={handleChange} />
                  <br />
 
-                 <label htmlFor="distance">Distance</label>
-                <input type="number" name="distance" id="distance" placeholder="How long is the trail in miles?" onChange={handleChange} />
+                 <label htmlFor="distance">Distance</label><br/>
+                <input className="input-field" type="number" name="distance" id="distance" placeholder="How long is the trail in miles?" onChange={handleChange} />
                 <br />
 
-                <label htmlFor="elevationGain">Elevation</label>
-                <input type="number" name="elevationGain" id="elevationGain" placeholder="How much total elevation did you gain?" onChange={handleChange} />
+                <label htmlFor="elevationGain">Elevation</label><br/>
+                <input className="input-field"  type="number" name="elevationGain" id="elevationGain" placeholder="How much total elevation did you gain?" onChange={handleChange} />
                 <br />
 
-                <label htmlFor="duration">Duration</label>
-                <input type="number" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
+                <label htmlFor="duration">Duration</label><br/>
+                <input className="input-field"  type="number" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
                 <br />
 
-                <fieldset>
+                <fieldset >
                     <legend>How difficult was the hike?</legend> 
-
+<div className="radio-options">
                     <label htmlFor="easy">Easy</label>
                     <input type="radio" name="difficulty" id="easy" value="easy" />
-                    <br />
+         
 
                     <label htmlFor="medium">Medium</label>
                     <input type="radio" name="difficulty" id="medium" value="medium" /> 
-                    <br />
+            
 
                     <label htmlFor="hard">Hard</label>
                     <input type="radio" name="difficulty" id="hard" value="hard" /> 
-                    <br />
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>What kind of hike was it?</legend> 
-
+                    <div className="radio-options">
                     <label htmlFor="thru-hike">Easy</label>
                     <input type="radio" name="routeType" id="thru-hike" value="thru-hike" />
-                    <br />
+        
 
                     <label htmlFor="out-n-back">Out & Back</label>
                     <input type="radio" name="routeType" id="out-n-back" value="out-n-back" /> 
-                    <br />
+        
 
                     <label htmlFor="loop">Loop</label>
                     <input type="radio" name="routeType" id="loop" value="loop" /> 
-                    <br />
+                    </div>
                 </fieldset>
 
                 
                 <div className="tag-container">
                     <legend>Was it..</legend>
+                    <div className="tag-container-options">
                     <div>
                         <input type="checkbox" id="quick" name="quick" value=""  onChange={handleChange} />
                         <label htmlFor="quick">Quick</label>
@@ -162,9 +168,16 @@ const AddHike = (props) => {
                         <input type="checkbox" id="Free Parking" name="Free Parking" value=""  onChange={handleChange} />
                         <label htmlFor="Free Parking">Free Parking</label>
                     </div>
+                    </div>
                 </div>
-                <button type="submit">Add Hike</button>
+
+                <label htmlFor="decription">Description</label><br/>
+                <textarea className="add-description" type="text" name="decription" id="decription" rows="4" cols="50" placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What should others know?" onChange={handleChange} />
+                <br />
+                <button className="submit-button" type="submit">Add Hike</button>
             </form>
+            
+            </div>
         </>
 
     )
