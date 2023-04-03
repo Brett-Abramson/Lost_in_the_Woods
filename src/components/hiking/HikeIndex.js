@@ -20,7 +20,7 @@ const HikeIndex = (props) => {
     //     setShowIndHike(!showIndHike);
     //   };
     const [hikes, setHikes] = useState([...props.hikes])
-    const [i, setI] = useState(null)
+    const [i, setI] = useState(null) 
     const [showAddHike, setshowAddHike] = useState(false);
 
     // for (let i = 0; i < props.hikes.length; i++){
