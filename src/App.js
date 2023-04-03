@@ -13,21 +13,21 @@ const App = () => {
   
   
   const getCamps = () => {
-    axios.get("http://localhost:3000/camping")
+    axios.get("https://damp-wildwood-97531.herokuapp.com/camping")
     .then((response) => setCamps(response.data), 
     (err) => console.log(err))
     .catch((error) => console.log(error))
     }
   
   const handleCreateCamp = (data) => {
-    axios.post("http://localhost:3000/camping", data).then((response) => {
+    axios.post("https://damp-wildwood-97531.herokuapp.com/camping", data).then((response) => {
       console.log(response);
       let newCamps = [...camps, response.data]
       setCamps(newCamps)
     })
   }
   const handleDeleteCamp = (deletedCamp) => {
-    axios.delete("http://localhost:3000/camping/" + deletedCamp._id)
+    axios.delete("https://damp-wildwood-97531.herokuapp.com/camping/" + deletedCamp._id)
     .then((response) => {
       let newCamps = camps.filter((camp) => {
         return camp._id !== deletedCamp._id
@@ -36,7 +36,7 @@ const App = () => {
     })
   }
   const handleEditCamp = (data) => {
-    axios.put("http://localhost:3000/camping/" + data._id, data)
+    axios.put("https://damp-wildwood-97531.herokuapp.com/camping/" + data._id, data)
     .then((response) => {
       console.log(response)
       let newCamp = camps.map((camp) => {
@@ -50,20 +50,20 @@ const App = () => {
   const [hikes, setHikes] = useState([])
 
   const getHikes = () => {
-    axios.get("http://localhost:3000/hiking")
+    axios.get("https://damp-wildwood-97531.herokuapp.com/hiking")
     .then((response) => setHikes(response.data), 
     (err) => console.log(err))
     .catch((error) => console.log(error))
   }
   const handleCreateHike = (data) => {
-    axios.post("http://localhost:3000/hiking", data).then((response) => {
+    axios.post("https://damp-wildwood-97531.herokuapp.com/hiking", data).then((response) => {
       console.log(response);
       let newHikes = [...hikes, response.data]
       setHikes(newHikes)
     })
   }
   const handleDeleteHike = (deletedHike) => {
-    axios.delete("http://localhost:3000/hiking/" + deletedHike._id)
+    axios.delete("https://damp-wildwood-97531.herokuapp.com/hiking/" + deletedHike._id)
     .then((response) => {
       let newHikes = hikes.filter((hike) => {
         return hike._id !== deletedHike._id
@@ -72,7 +72,7 @@ const App = () => {
     })
   }
   const handleEditHike = (data) => {
-    axios.put("http://localhost:3000/hiking/" + data._id, data)
+    axios.put("https://damp-wildwood-97531.herokuapp.com/hiking/" + data._id, data)
     .then((response) => {
       console.log(response)
       let newHike = hikes.map((hike) => {
