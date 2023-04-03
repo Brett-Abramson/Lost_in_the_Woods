@@ -2,28 +2,18 @@ import "../../style/index.css"
 
 import HikeShowPage from "./HikeShowPage"
 import AddHike from "../hiking/add"
+// import PORT from ".../project_3_backend/server.js"
 
 import {useState} from "react"
 import axios from "axios"
 
-// import EditHike from './components/hiking/edit';
-
-// import Hike from "./hiking/show"
-// import EditHike from './edit';
-
-
-const HikeIndex = (props) => {
-  
+const HikeIndex = (props) => {  
     const [showHike, setShowHike] = useState(props.hikes.map(hike => false))    
 
-    // const toggleIndHike = () => {
-    //     setShowIndHike(!showIndHike);
-    //   };
     const [hikes, setHikes] = useState([])
     const [i, setI] = useState(null)
     const [showAddHike, setshowAddHike] = useState(false);
 
-    // for (let i = 0; i < props.hikes.length; i++){
   
 
     const handleCreateHike = (data) => {
@@ -40,6 +30,9 @@ const HikeIndex = (props) => {
       };
 
 
+      //=======hidden======
+
+
     return (
         <>
         <main>
@@ -49,7 +42,7 @@ const HikeIndex = (props) => {
                 <nav className="navbar-hike">
                 <div className="nav-bar-photo-and-text" id="hiker-background">
                 <img src="https://i.imgur.com/dwHSPgj.png" alt="hiking man" id="hiker"/>
-                <p id="hiking-man-text">Hiking</p>
+                <p id="hiking-man-text" >Hiking</p>
                 </div>
                 <div className="nav-bar-photo-and-text" >
                 <a onClick={toggleAddHike}>
@@ -78,7 +71,11 @@ const HikeIndex = (props) => {
                 <img src="https://i.imgur.com/Ydl3t1q.png"  id="pets" alt="pet friendly"/>
                 <p>Pet Friendly</p>
                 </div>
-    
+
+            
+
+  
+
                 </nav>
                 <hr id="hr-below-bar-hike"/>
     
@@ -95,6 +92,8 @@ const HikeIndex = (props) => {
 
 
                             <div className="card">
+
+                                
                                 <button onClick={()=> {
                                     // this is saying set your show variable  to be true or false
                                     // copying the array of boolean variables
@@ -103,13 +102,17 @@ const HikeIndex = (props) => {
                                     newShowHike[index] = !newShowHike[index]
                                     // change the state of the individual boolean
                                     setShowHike(newShowHike)
+                                    
                                     setI(index)
                                 }}>
                                 {/* only change the button of the one we want to change */}
                                 {showHike[index] ? "Hide" : "Show"}
                             </button>
+                            
                             {/* only show the one we want to show */}
-                            {showHike[index] && <HikeShowPage hike={hike} />}
+                            
+                            {/* {showHike[index] && <HikeShowPage hike={hike} />} */}
+                            
                                 <div className="card-image">
                                 <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
                                     <img src="" alt={"picture of " + hike.name} />
@@ -120,11 +123,13 @@ const HikeIndex = (props) => {
                                     <p>{hike.difficulty}</p>
                                     <p>{hike.distance} miles</p>
                                 </div>
-                            <HikeShowPage hike={hike}/>
+ {/* <HikeShowPage hike={hike}/>  */}
                             </div>
-                        
                             
+                        
+                        
                         )
+                        
                     })}
                 </div>
 

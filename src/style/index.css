@@ -116,7 +116,6 @@ input[type=text], .input-field {
 
 .navbar-hike{
     width: 70%;
-    text-align: center;
     padding: 12px 0;
     transition: all 0.3s ease;
     color: black;
@@ -131,7 +130,7 @@ input[type=text], .input-field {
 
 .navbar-camp {
     width: 60%;
-    text-align: center;
+    /* text-align: center; */
     padding: 12px 0;
     transition: all 0.3s ease;
     color: black;
@@ -146,6 +145,8 @@ input[type=text], .input-field {
 .nav-bar-photo-and-text{
     padding-top: 3%;
     margin-right: 15px;
+        /* text-align: center; */
+
 }
 #hiking-man-text{
     margin-bottom: 10px;
