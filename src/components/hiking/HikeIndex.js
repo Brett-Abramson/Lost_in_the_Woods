@@ -10,17 +10,12 @@ import {useState} from "react"
 
 
 const HikeIndex = (props) => {
-
-    // for (let i = 0; i < props.hikes.length; i++){
   
-    const [showIndHike, setShowIndHike] = useState(false);
+    const [showHike, setShowHike] = useState(props.hikes.map(hike => false))    
 
-
-    // }
-
-    const toggleIndHike = () => {
-        setShowIndHike(!showIndHike);
-      };
+    // const toggleIndHike = () => {
+    //     setShowIndHike(!showIndHike);
+    //   };
 
 
     return (
@@ -59,7 +54,7 @@ const HikeIndex = (props) => {
                     
 
 
-                    {props.hikes.map((hike) => {
+                    {props.hikes.map((hike, index) => {
                         
 
 
@@ -67,7 +62,20 @@ const HikeIndex = (props) => {
 
 
                             <div className="card">
-                    
+                                <button onClick={()=> {
+                                    // this is saying set your show variable  to be true or false
+                                    // copying the array of boolean variables
+                                    const newShowHike = [...showHike]
+                                    // get to only the boolean variable we want
+                                    newShowHike[index] = !newShowHike[index]
+                                    // change the state of the individual boolean
+                                    setShowHike(newShowHike)
+                                }}>
+                                {/* only change the button of the one we want to change */}
+                                {showHike[index] ? "Hide" : "Show"}
+                            </button>
+                            {/* only show the one we want to show */}
+                            {showHike[index] && <HikeShowPage hike={hike} />}
                                 <div className="card-image">
                                 <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
                                     <img src="" alt={"picture of " + hike.name} />
