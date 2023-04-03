@@ -1,7 +1,10 @@
 import "../../style/index.css"
 
 import HikeShowPage from "./HikeShowPage"
+import AddHike from "../hiking/add"
+
 import {useState} from "react"
+import axios from "axios"
 
 // import EditHike from './components/hiking/edit';
 
@@ -16,6 +19,25 @@ const HikeIndex = (props) => {
     // const toggleIndHike = () => {
     //     setShowIndHike(!showIndHike);
     //   };
+    const [hikes, setHikes] = useState([])
+
+    const [showAddHike, setshowAddHike] = useState(false);
+
+    // for (let i = 0; i < props.hikes.length; i++){
+  
+
+    const handleCreateHike = (data) => {
+        axios.post("http://localhost:3000/hiking", data).then((response) => {
+          console.log(response);
+          let newHikes = [...hikes, response.data]
+          setHikes(newHikes)
+        })
+      }
+    // }
+
+    const toggleAddHike = () => {
+        setshowAddHike(!showAddHike);
+      };
 
 
     return (
@@ -23,15 +45,26 @@ const HikeIndex = (props) => {
         <main>
     
                 <div className="">
-    <hr id="hr-above-bar-hike"/>
+                <hr id="hr-above-bar-hike"/>
                 <nav className="navbar-hike">
                 <div className="nav-bar-photo-and-text" id="hiker-background">
                 <img src="https://i.imgur.com/dwHSPgj.png" alt="hiking man" id="hiker"/>
                 <p id="hiking-man-text">Hiking</p>
                 </div>
                 <div className="nav-bar-photo-and-text" >
+                <a onClick={toggleAddHike}>
+                {showAddHike && (
+                              <div className="modal">
+                                <div onClick={toggleAddHike} className="overlay"></div>
+                                <div className="modal-content">
+                              <AddHike handleCreate={handleCreateHike}/>
+                              <button className="close-modal" onClick={toggleAddHike}>X</button>
+                              </div>
+                              </div>
+                              )}
                 <img src="https://i.imgur.com/jRAPlMA.png" alt="add" id="add-hike"/>
                 <p>Add hike</p>
+                </a>
                 </div>
                 <div className="nav-bar-photo-and-text" >
                 <img src="https://i.imgur.com/NNaDgju.png" alt="parking filter" id="parking"/>
