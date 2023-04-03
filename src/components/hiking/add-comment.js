@@ -77,7 +77,7 @@ const AddHikeComment = (props) => {
             <h1>Add a comment</h1>
             <form onSubmit={handleCommentSubmit}>
               <label htmlFor="name">Name: </label>
-              <input type="text" name="name" placeholder="Your name goes here" onChange={handleNameChange} />
+              <input type="text" name="name" placeholder="Your name goes here" onChange={handleChange} />
 
               <label htmlFor="duration">Duration</label>
               <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleChange} />
@@ -93,7 +93,7 @@ const AddHikeComment = (props) => {
               <label htmlFor="commentSection">Comments </label>
               <textarea rows="4" cols="50" name="commentSection" placeholder="What was the hike like? What should other hikers know about the trail?" onChange={handleChange}>
                 </textarea>
-{/* add radios with the booleans here */}
+              {/* add radios with the booleans here */}
 
               <label htmlFor="photo">Photo: </label>
               <input type="text" name="photo" />
