@@ -1,15 +1,35 @@
 import "../../style/index.css"
-import "../../style/home.css"
+
+import HikeShowPage from "./HikeShowPage"
+import {useState} from "react"
+
+// import EditHike from './components/hiking/edit';
+
+// import Hike from "./hiking/show"
+// import EditHike from './edit';
 
 
-const Camp = (props) => {
-    return(
+const HikeIndex = (props) => {
+
+    // for (let i = 0; i < props.hikes.length; i++){
+  
+    const [showIndHike, setShowIndHike] = useState(false);
+
+
+    // }
+
+    const toggleIndHike = () => {
+        setShowIndHike(!showIndHike);
+      };
+
+
+    return (
         <>
-        {/* <div className="page-container"> */}
         <main>
-            
-                <hr id="hr-above-bar"/>
-                <nav className="navbar-camp">
+    
+                <div className="">
+    <hr id="hr-above-bar-hike"/>
+                <nav className="navbar-hike">
                 <div className="nav-bar-photo-and-text" id="hiker-background">
                 <img src="https://i.imgur.com/dwHSPgj.png" alt="hiking man" id="hiker"/>
                 <p id="hiking-man-text">Hiking</p>
@@ -32,30 +52,45 @@ const Camp = (props) => {
                 </div>
     
                 </nav>
-                <hr id="hr-below-bar"/>
-            
+                <hr id="hr-below-bar-hike"/>
+    
+                
                 <div className="card-container">
-                    {props.camps.map((camp) => {
+                    
+
+
+                    {props.hikes.map((hike) => {
+                        
+
+
                         return (
+
+
                             <div className="card">
+                    
                                 <div className="card-image">
-                                <button className="delete-button" onClick={()=>{props.handleDelete(camp)}}>X</button><br/>
-                                    <img src="{camp.name}" alt={"picture of " + camp.name} />
+                                <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
+                                    <img src="" alt={"picture of " + hike.name} />
                                 </div>
                                 <div className="card-text">
-                                    <h3 className="card-name">{camp.name}</h3>
-                                    <p>{camp.location}</p>
-                                    <p>{camp.campType}</p>
-                                    <p>{camp.easeOfBooking}</p>
+                                <a className="card-name" href="/hiking/{hike._id}">{hike.name}</a>
+                                    <p >best features here</p>
+                                    <p>{hike.difficulty}</p>
+                                    <p>{hike.distance} miles</p>
                                 </div>
+                            <HikeShowPage hike={hike}/>
                             </div>
+                        
+                            
                         )
                     })}
                 </div>
+
+            </div>
             </main>
-        {/* </div> */}
+        
         </>
     )
 }
 
-export default Camp
+export default HikeIndex

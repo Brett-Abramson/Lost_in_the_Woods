@@ -1,4 +1,5 @@
 import {useState} from "react"
+import "../../style/index.css"
 
 const AddCamp = (props) => {
     const [camp,setCamp] = useState ({
@@ -49,6 +50,9 @@ const AddCamp = (props) => {
 
     return (
         <>
+        <div className="add-item">
+        <h1>Add a New Camp Site</h1>
+
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="What is the name of the campground" onChange={handleChange} />
@@ -67,48 +71,51 @@ const AddCamp = (props) => {
                 <br />
 
                 <fieldset>
+        
                     <legend>Type of Booking</legend> 
-
+                    <div className="radio-options">
                     <label htmlFor="online">Online</label>
                     <input type="radio" name="difficulty" id="online" value="online" />
-                    <br />
+    
 
                     <label htmlFor="phone-call">Phone Call</label>
                     <input type="radio" name="difficulty" id="phone-call" value="phone-call" /> 
-                    <br />
+              
 
                     <label htmlFor="first-come">First Come First Served</label>
                     <input type="radio" name="difficulty" id="first-come" value="first-come" /> 
-                    <br />
 
                     <label htmlFor="reservation-only">Reservation Only</label>
                     <input type="radio" name="difficulty" id="reservation-only" value="reservation-only" /> 
-                    <br />
+                
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Type of Camping</legend> 
-
+                    <div className="radio-options">
                     <label htmlFor="tent">Tent</label>
                     <input type="radio" name="difficulty" id="tent" value="tent" />
-                    <br />
+                
 
                     <label htmlFor="rv">RV</label>
                     <input type="radio" name="difficulty" id="rv" value="rv" /> 
-                    <br />
+                
 
                     <label htmlFor="camper">Camper</label>
                     <input type="radio" name="difficulty" id="camper" value="camper" /> 
-                    <br />
+                
 
                     <label htmlFor="primitive">Primitive</label>
                     <input type="radio" name="difficulty" id="primitive" value="primitive" /> 
-                    <br />
+                
+                    </div>
                 </fieldset>
 
                 <legend>Amenities...</legend>
                 
                 <div className="tag-container">
+                <div className="tag-container-options">
                     <div>
                         <input type="checkbox" id="bathroom" name="bathroom" value=""  onChange={handleChange} />
                         <label htmlFor="bathroom">Bathrooms</label>
@@ -157,14 +164,16 @@ const AddCamp = (props) => {
                         <input type="checkbox" id="firewood" name="firewood" value="firewood"  onChange={handleChange} />
                         <label htmlFor="firewood">Firewood</label>
                     </div>
+                    </div>
                 </div>
                 <div className="comments">
                         <label htmlFor="commentSection">Description</label>
-                        <textarea id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us about the campground. What did you like about it? What hsould others know?" />
+                        <textarea className="add-description" id="commentSection" name="commentSection" onChange={handleChange} placeholder="Tell us about the campground. What did you like about it? What hsould others know?" />
                     </div>
                 
-                    <button type="submit">Add Campsite</button>
+                    <button type="submit" className="submit-button" >Add Campsite</button>
             </form>
+            </div>
         </>
 
 
