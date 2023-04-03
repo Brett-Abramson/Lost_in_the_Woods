@@ -1,6 +1,10 @@
 import "../../style/index.css"
+import Hike from "./show"
+import {useState} from "react"
 
 const HikeIndex = (props) => {
+    
+    const [show, setShow] = useState(false)
     return (
         <>
             <div className="page-container">
@@ -25,6 +29,10 @@ const HikeIndex = (props) => {
                     {props.hikes.map((hike) => {
                         return (
                             <div className="card">
+                                <button onClick={()=> setShow(!show)}>
+                                    {show ? "Hide" : "Show"}
+                                </button>
+                                {show && <Hike hikes={hike} />}
                                 <div className="card-image">
                                     <img src="" alt={"picture of " + hike.name} />
                                 </div>
