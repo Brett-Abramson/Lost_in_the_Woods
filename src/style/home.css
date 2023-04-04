@@ -27,6 +27,9 @@ main {
   flex-direction: column;
 }
 
+.right-side{
+}
+
 .home-add-buttons {
   display: flex;
 }

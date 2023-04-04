@@ -24,14 +24,11 @@ const HikeShowPage = (props) => {
   }
 
   return (
-    // <>
-    //   {props.hikes.name}
-    // </>
+
 <main>
 <div className="no-this-is-a-column">
-    <div className="show-page">
-      <div className="hike-card">
-        {/* <img src={props.hikes.image} alt="hikes" /> */}
+      <div className="hike-info">
+        <img src={props.hikes.image} alt="hikes" />
         <h1>{props.hike.name}</h1>
         <h4>{props.hike.location}</h4>
         <h4>{props.hike.difficulty}</h4>
@@ -107,7 +104,6 @@ const HikeShowPage = (props) => {
 
         </div>
       </div>
-    </div>
     </div>
     </main>
   );
