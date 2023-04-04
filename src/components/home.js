@@ -56,7 +56,7 @@ const Home = () => {
                               <div className="modal">
                                 <div onClick={toggleAddHike} className="overlay"></div>
                                 <div className="modal-content">
-                              <AddHike handleCreateHike={handleCreateHike}/>
+                              <AddHike handleCreateHike={handleCreateHike} toggleAddHike={toggleAddHike}/>
                               <button className="close-modal" onClick={toggleAddHike}>X</button>
                               </div>
                               </div>
