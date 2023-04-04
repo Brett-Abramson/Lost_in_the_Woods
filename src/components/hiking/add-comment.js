@@ -3,7 +3,7 @@ import { useState } from "react";
 const AddHikeComment = (props) => {
   const [addComment, setAddComment] = useState(false);
   // const [weather, setWeather]=useState()
-
+  const [hike, setHike] = useState({...props.hike})
   const [comments, setComment] = useState({
       photo: "",
       name: "",
@@ -62,8 +62,10 @@ const AddHikeComment = (props) => {
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
-    props.handleEditHike(comments);
+    setHike(hike.comment.push(comments))
+    props.handleEditHike(hike);
     console.log(comments)
+    // console.log(event)
     
   };
 
