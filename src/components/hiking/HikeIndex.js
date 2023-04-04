@@ -77,6 +77,7 @@ const HikeIndex = (props) => {
                                 <div className="card-image" >
                                 <img id="index-photo" src={hike.photo} alt={"picture of " + hike.name} />
                                 </div>
+                                
                                 <div className="card-text">
                                 <p className="card-name" >{hike.name}</p>
                                     <p className="card-details">{hike.difficulty} difficulty</p>

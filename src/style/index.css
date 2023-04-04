@@ -7,7 +7,9 @@
 }
 .card-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
+    width: 80%;
+    margin-left: 10%;
 
 }
 .card {
@@ -116,19 +118,19 @@ input[type=text], .input-field {
 }
 
 #hr-above-bar-hike{
-    width: 100%;
+    width: 80%;
     border: 2px solid black;
 }
 
 #hr-below-bar-hike{
     height: 10px;
-    width: 100%;
+    width: 80%;
 	border: 0;
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 
 .navbar-hike{
-    width: 70%;
+    width: 60%;
     /* text-align: center; */
     padding: 12px 0;
     transition: all 0.3s ease;
@@ -139,6 +141,7 @@ input[type=text], .input-field {
     justify-content: space-between;
     align-items: center;
     font-family: "Halant", serif;  
+    margin-left: 10%;
 }
 
 
@@ -154,6 +157,7 @@ input[type=text], .input-field {
     justify-content: start;
     align-items: center;
     font-family: "Halant", serif;
+    margin-left: 10%;
 }
 
 .nav-bar-photo-and-text{
@@ -270,6 +274,7 @@ max-width: 300px;
       display: grid;
       grid-template-columns: auto auto auto;
       padding: 10px 30px;
+    
     }
   }
 
