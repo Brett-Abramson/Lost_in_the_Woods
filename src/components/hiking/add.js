@@ -84,9 +84,9 @@ const AddHike = (props) => {
                 <input className="input-field"  type="number" name="duration" id="duration" placeholder="How long did it take you to finish the trail?" onChange={handleChange} />
                 <br />
 
-                <fieldset >
+                <fieldset onChange={handleChange}>
                     <legend>How difficult was the hike?</legend> 
-<div className="radio-options">
+                    <div className="radio-options">
                     <label htmlFor="easy">Easy</label>
                     <input type="radio" name="difficulty" id="easy" value="easy" />
          
@@ -100,7 +100,7 @@ const AddHike = (props) => {
                     </div>
                 </fieldset>
 
-                <fieldset>
+                <fieldset onChange={handleChange}>
                     <legend>What kind of hike was it?</legend> 
                     <div className="radio-options">
                     <label htmlFor="thru-hike">Easy</label>
@@ -171,10 +171,10 @@ const AddHike = (props) => {
                     </div>
                 </div>
 
-                <label htmlFor="decription">Description</label><br/>
-                <textarea className="add-description" type="text" name="decription" id="decription" rows="4" cols="50" placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What should others know?" onChange={handleChange} />
+                <label htmlFor="description">Description</label><br/>
+                <textarea className="add-description" type="text" name="description" id="decsription" rows="4" cols="50" placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What should others know?" onChange={handleChange} />
                 <br />
-                <button className="submit-button" type="submit">Add Hike</button>
+                <button className="submit-button" onClick={props.toggleAddCamp} type="submit">Add Hike</button>
             </form>
             
             </div>

@@ -56,7 +56,7 @@ const Home = () => {
                               <div className="modal">
                                 <div onClick={toggleAddHike} className="overlay"></div>
                                 <div className="modal-content">
-                              <AddHike handleCreate={handleCreateHike}/>
+                              <AddHike handleCreateHike={handleCreateHike}/>
                               <button className="close-modal" onClick={toggleAddHike}>X</button>
                               </div>
                               </div>
@@ -71,7 +71,7 @@ const Home = () => {
                               <div className="modal">
                                 <div onClick={toggleAddCamp} className="overlay"></div>
                                 <div className="modal-content">
-                              <AddCamp handleCreate={handleCreateCamp}/>
+                              <AddCamp handleCreate={handleCreateCamp} toggleAddCamp={toggleAddCamp} />
                               <button className="close-modal" onClick={toggleAddCamp}>X</button>
                               </div>
                               </div>

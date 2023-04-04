@@ -31,7 +31,7 @@ const Edit = (props) => {
 
             <label htmlFor="commentSection">Comments </label>
             <input type="" name="commentSection" placeholder={props.hikes.comments.commentSection} onChange={handleChange} />
-{/* add radios with the booleans here */}
+            {/* add radios with the booleans here */}
 
             <label htmlFor="photo">Photo: </label>
             <input type="text" name="photo" placeholder={props.hikes.comments.photo}onChange={handleChange} />
