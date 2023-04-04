@@ -1,3 +1,304 @@
+@import url('https://fonts.cdnfonts.com/css/halant');
+@import url('https://fonts.cdnfonts.com/css/trykker');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap');
+
 * {
     box-sizing: border-box;
 }
+.card-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+
+}
+.card {
+    padding: 20px;
+    font-size: 15px;
+    text-align: left;
+    word-wrap: break-word;
+    font-family: 'Inria Serif', serif;
+                                                
+}
+
+.card-name {
+    font-family: 'Halant', sans-serif;       
+    font-weight: 900;     
+    font-size: 1.5em;  
+    word-wrap: break-word;            
+}
+.card-details{
+    /* font-weight: 500;      */
+    font-size: 1em;  
+}
+
+
+.delete-button {
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: right;
+}
+
+.add-item{
+    font-family: 'Halant', sans-serif;  
+    font-size: 30px;                                           
+}
+
+input[type=text], .input-field {
+    width: 100%;
+    padding-bottom: 5px;
+    display: inline-block;
+    border: 1px solid white;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-family: 'Halant', sans-serif;
+    
+  }
+
+  fieldset {
+   border:0;
+}
+
+.tag-container-options {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-size: 20px;  
+}
+
+.radio-options {
+    font-size: 20px;  
+    margin-left: 5px;
+}
+
+
+.add-description{
+    width: 100%;
+    height: 150px;
+    font-size: 20px; 
+    font-family: 'Halant', sans-serif;
+    border: 2px solid white;
+}
+
+.submit-button{
+    background-color: #F57940;
+    border: none;
+    border-radius: 50px;
+    width: 20%;
+    padding: 2%;
+    margin: 5% 0;
+    margin-right: 15px;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: 'Trykker', sans-serif;
+}
+
+.card-text {
+    font-size: 15px;
+    line-height: 15px;
+    font-family: 'Halant', sans-serif;
+    display: flex;
+    flex-direction: column;
+    line-height: .05em;
+
+}
+
+#hr-above-bar {
+    width: 63%;
+    border: 2px solid black;
+}
+
+#hr-below-bar{
+    height: 10px;
+    width: 63%;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+#hr-above-bar-hike{
+    width: 100%;
+    border: 2px solid black;
+}
+
+#hr-below-bar-hike{
+    height: 10px;
+    width: 100%;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.navbar-hike{
+    width: 70%;
+    /* text-align: center; */
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    height: 14vh;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Halant", serif;  
+}
+
+
+.navbar-camp {
+    width: 60%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    height: 14vh;
+    justify-content: start;
+    align-items: center;
+    font-family: "Halant", serif;
+}
+
+.nav-bar-photo-and-text{
+    padding-top: 3%;
+    margin-right: 15px;
+}
+#hiking-man-text{
+    margin-bottom: 10px;
+}
+.nav-bar-photo-and-text p{
+    font-size: 1.1em;
+}
+
+ #hiker-background{
+    background-color: #E7E9EC;
+    /* margin-top: 5%;
+    margin-bottom: 5%; */
+    height: 145%;
+    width: 90px;
+ }
+
+#hiker{
+    width:80px;
+    height:50px;
+}
+
+#add-hike{
+    width:70px;
+    height:60px;
+}
+
+#parking{
+    width:100px;
+    height:60px;
+}
+
+#kids{
+    width:60px;
+    height:60px;
+}
+
+#pets{
+    width:100px;
+    height:60px;
+}
+
+.flex-container-row{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.hike-info{
+    line-height: .8vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+.basic-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+width: 150%;
+}
+
+
+#show-page-photo{
+height: 300px;
+width:100%;
+}
+
+#show-hike-name {
+    font-size: 5em;
+    word-wrap: break-word;
+
+}
+
+#show-hike-location{
+    font-size:2em
+}
+
+#show-hike-difficulty{
+    font-size:2em
+}
+
+#index-photo{
+width: 100%;
+height: 50%;
+}
+
+.see-show-button{
+    background-color: #F57940;
+    border: none;
+    border-radius: 30px;
+    width: 25%;
+    padding: 2%;
+    margin: 5% 0;
+    margin-right: 15px;
+    font-size: .8em;
+    font-weight: bold;
+    font-family: 'Trykker', sans-serif;
+    overflow-wrap: break-word
+}
+
+
+  @media screen and (max-width: 1200px) {
+    .card-container{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 10px 30px;
+    }
+  }
+
+@media screen and (max-width: 900px) {
+    .card-container{
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 10px 30px;
+    }
+    .nav-bar-photo-and-text{
+        padding-top: 5%;
+    }
+
+    #show-hike-name {
+        font-size: 4em;
+        word-wrap: break-word;
+    
+    }
+}
+
+  @media screen and (max-width: 500px) {
+    .card-container{
+      display: grid;
+      grid-template-columns: auto;
+      padding: 10px 30px;
+    }
+    #show-hike-name {
+        font-size: 2em;
+        word-wrap: break-word;
+    
+    }
+
+  }

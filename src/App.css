@@ -1,0 +1,125 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-right: 10%;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Halant", serif;
+  background-color: white;
+
+}
+
+.nav-title {
+  width: 50%;
+  margin-left: 18%;
+  font-size: 4vh;
+  font-weight: bold;
+  color: #7FAE8F;
+}
+
+.nav-links {
+  width: 50%;
+  margin-right: 12%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+
+.nav-links > a {
+  margin: 0 5%;
+  text-decoration: none;
+  color: black;
+  font-family: "Halant-bold, serif";
+}
+
+.nav-links > a:active {
+  text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+  }
+
+  .visible {
+    display: block;
+  }
+
+  #hidden {
+    visibility: hidden;
+    height: 0;
+  }
+
+  #visible {
+    visibility: visible;
+  }
+
+  .buttons-style{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Halant', sans-serif;
+    font-weight: bold;
+  }
+
+
+
+  @media screen and (max-width:1100px) {
+    .navbar {
+      display: flex;
+      margin-right: 10%;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Halant", serif;
+    }
+    
+    .nav-title {
+      width: 100%;
+      font-size: 4vh;
+      font-weight: bold;
+      margin-left: 10%;
+    }
+    .nav-links {
+      width: 70%;
+      margin-right: 12%;
+      margin-left: 5%;
+      display: flex;
+      justify-content: start;
+  
+    }
+
+    .nav-links > a {
+      width: 0;
+      text-decoration: none;
+      color: black;
+      font-family: "Halant-bold, serif";
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .navbar {
+      flex-direction: column;
+    }
+    .nav-title {
+      margin-left: 31%;
+
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .nav-title {
+      margin-left: 10%;
+
+    }
+
+    .nav-links {
+      margin-left: -20%;
+    }
+  }
