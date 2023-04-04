@@ -102,7 +102,7 @@ const HikeIndex = (props) => {
                     })}
                 </div>
             </div>
-                      {showHike[i] && <HikeShowPage hike={props.hikes[i]} />}
+                      {showHike[i] && <HikeShowPage hike={props.hikes[i]} handleEditHike={props.handleEditHike} />}
                       </div>
             </main>
         </>
