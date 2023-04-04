@@ -70,7 +70,7 @@ const AddCamp = (props) => {
                 <input type="text" name="campsiteSize" id="campsiteSize" placeholder="How many people can the campsite accommodate?" onChange={handleChange} />
                 <br />
 
-                <fieldset>
+                <fieldset onChange={handleChange}>
         
                     <legend>Type of Booking</legend> 
                     <div className="radio-options">
@@ -91,7 +91,7 @@ const AddCamp = (props) => {
                     </div>
                 </fieldset>
 
-                <fieldset>
+                <fieldset onChange={handleChange}>
                     <legend>Type of Camping</legend> 
                     <div className="radio-options">
                     <label htmlFor="tent">Tent</label>
