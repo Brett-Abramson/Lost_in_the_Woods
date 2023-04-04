@@ -1,31 +1,20 @@
 import "../../style/index.css"
-
 import HikeShowPage from "./HikeShowPage"
 import AddHike from "../hiking/add"
-
 import {useState} from "react"
 import axios from "axios"
-
 // import EditHike from './components/hiking/edit';
-
 // import Hike from "./hiking/show"
 // import EditHike from './edit';
-
-
 const HikeIndex = (props) => {
-  
-    const [showHike, setShowHike] = useState(props.hikes.map(hike => false))    
-
+    const [showHike, setShowHike] = useState(props.hikes.map(hike => false))
     // const toggleIndHike = () => {
     //     setShowIndHike(!showIndHike);
     //   };
     const [hikes, setHikes] = useState([...props.hikes])
     const [i, setI] = useState(null) 
     const [showAddHike, setshowAddHike] = useState(false);
-
     // for (let i = 0; i < props.hikes.length; i++){
-  
-
     const handleCreateHike = (data) => {
         axios.post("http://localhost:3000/hiking", data).then((response) => {
           console.log(response);
@@ -34,16 +23,13 @@ const HikeIndex = (props) => {
         })
       }
     // }
-
     const toggleAddHike = () => {
         setshowAddHike(!showAddHike);
       };
-
-
     return (
         <>
         <main>
-    
+            <div className="no-this-is-a-column">
                 <div className="">
                 <hr id="hr-above-bar-hike"/>
                 <nav className="navbar-hike">
@@ -78,22 +64,11 @@ const HikeIndex = (props) => {
                 <img src="https://i.imgur.com/Ydl3t1q.png"  id="pets" alt="pet friendly"/>
                 <p>Pet Friendly</p>
                 </div>
-    
                 </nav>
                 <hr id="hr-below-bar-hike"/>
-    
-                
                 <div className="card-container">
-                    
-
-
                     {props.hikes.map((hike, index) => {
-                        
-
-
                         return (
-
-
                             <div className="card">
                                 <button onClick={()=> {
                                     // this is saying set your show variable  to be true or false
@@ -122,21 +97,14 @@ const HikeIndex = (props) => {
                                 </div>
                             {/* <HikeShowPage hike={hike}/> */}
                             </div>
-                        
                         )
                     })}
                 </div>
-
             </div>
-
                       {showHike[i] && <HikeShowPage hike={props.hikes[i]} />}
-                  
-
-        
+                      </div>
             </main>
-        
         </>
     )
 }
-
 export default HikeIndex

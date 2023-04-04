@@ -5,11 +5,18 @@ main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}            
+
+}           
+
+.no-this-is-a-column{
+  flex-direction: column;
+  width: 90%;
+}
 
 .home-page {
   display: flex;
   margin-left: 10%;
+  flex-direction: column;
 }
 
 
