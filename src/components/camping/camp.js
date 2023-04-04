@@ -1,14 +1,16 @@
 import "../../style/index.css"
 import "../../style/home.css"
-
+import Camping from "./show"
 import AddCamp from "../camping/add"
 
 import {useState} from "react"
 import axios from "axios"
 
 const Camp = (props) => {
+    const [showCamp, setShowCamp] = useState(props.camps.map(camp => false))
     const [camps, setCamps] = useState([])
     const [showAddCamp, setshowAddCamp] = useState(false);
+    const [i, setI] = useState(null) 
 
     const handleCreateCamp = (data) => {
         axios.post("http://localhost:3000/camping", data).then((response) => {
@@ -67,12 +69,12 @@ const Camp = (props) => {
                 <hr id="hr-below-bar"/>
             
                 <div className="card-container">
-                    {props.camps.map((camp) => {
+                    {props.camps.map((camp, index) => {
                         return (
                             <div className="card">
                                 <div className="card-image">
                                 <button className="delete-button" onClick={()=>{props.handleDelete(camp)}}>X</button><br/>
-                                    <img src="{camp.name}" alt={"picture of " + camp.name} />
+                                    <img src={camp.photo} alt={"picture of " + camp.name} />
                                 </div>
                                 <div className="card-text">
                                     <h3 className="card-name">{camp.name}</h3>
@@ -80,10 +82,22 @@ const Camp = (props) => {
                                     <p>{camp.campType}</p>
                                     <p>{camp.easeOfBooking}</p>
                                 </div>
+                                <button className="see-show-button" onClick={()=> {
+                                    const newShowCamp = [...showCamp]
+                                    // get to only the boolean variable we want
+                                    newShowCamp[index] = !newShowCamp[index]
+                                    // change the state of the individual boolean
+                                    setShowCamp(newShowCamp)
+                                    setI(index)
+                                }}>
+                                {/* only change the button of the one we want to change */}
+                                {showCamp[index] ? "Hide Details" : "Show"}
+                            </button>
                             </div>
                         )
                     })}
                 </div>
+                {showCamp[i] && <Camping camp={props.camps[i]} handleEditCamp={props.handleEditCamp} />}
             </main>
         {/* </div> */}
         </>

@@ -79,15 +79,34 @@ const HikeShowPage = (props) => {
 
 {/* {props.hikeComment((sub) =>
 <> */}
-          {/* <div className="comment-section"> */}
+          <div className="comment-section">
             {/* make this a column */}
             {/* need to add something that maps through the array of comments and prints them all out */}
+            <h2>Comments</h2>
+            {props.hike.comment.map((comment) => {
+              return (
+                <>
+                <hr />
+                  <div className="name">
+                    <h3>{comment.name}</h3>
+                  </div>
+                  <div className="comment-duration">
+                    <p>Duration of Hike: {comment.duration}</p>
+                  </div>
+                  <div className="commenters-comment">
+                    <p>{comment.commentSection}</p>
+                  </div>
+                </>
+              )
+
+            })}
+            <hr />
             {/* <div className="comment-header"> */}
                 {/* make this a row */}
-              {/* <img src={sub.comments.name} alt="commenter"></img>
-              <div className="name-and-info"> */}
+              {/* <img src={sub.comments.name} alt="commenter"></img> */}
+
                 {/* make this a column */}
-                {/* <h3>{sub.comments.name}</h3> */}
+                {/* <h3>{props.hike.comment[0].name}</h3> */}
                 {/* <div className="info"> */}
                     {/* make this a row */}
                   {/* <p>{sub.comments.duration}</p> */}
@@ -111,7 +130,7 @@ const HikeShowPage = (props) => {
                 {/* <p>get the rescrouses for the date tag</p> */}
             {/* </div> */}
             {/* </div> */}
-          {/* </div> */}               
+          </div>               
 {/* </>
 )} */}
 

@@ -8,13 +8,10 @@ import axios from "axios"
 // import EditHike from './edit';
 const HikeIndex = (props) => {
     const [showHike, setShowHike] = useState(props.hikes.map(hike => false))
-    // const toggleIndHike = () => {
-    //     setShowIndHike(!showIndHike);
-    //   };
     const [hikes, setHikes] = useState([...props.hikes])
     const [i, setI] = useState(null) 
     const [showAddHike, setshowAddHike] = useState(false);
-    // for (let i = 0; i < props.hikes.length; i++){
+
     const handleCreateHike = (data) => {
         axios.post("http://localhost:3000/hiking", data).then((response) => {
           console.log(response);
@@ -22,7 +19,7 @@ const HikeIndex = (props) => {
           setHikes(newHikes)
         })
       }
-    // }
+
     const toggleAddHike = () => {
         setshowAddHike(!showAddHike);
       };
