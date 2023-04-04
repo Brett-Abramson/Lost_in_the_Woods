@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+import "../../style/home.css"
+import "../../style/index.css"
+
+
 const AddHikeComment = (props) => {
   const [addComment, setAddComment] = useState(false);
   // const [weather, setWeather]=useState()
@@ -76,17 +80,18 @@ const AddHikeComment = (props) => {
       {addComment && (
         <div className="modal">
           <div onClick={toggleAdd} className="overlay"></div>
-          <div className="modal-content">
+          <div className="modal-content" id="modal-content-comment">
           <button className="close-modal" onClick={toggleAdd}>
               CLOSE
             </button>
             <h1>Add a comment</h1>
+            
             <form onSubmit={handleCommentSubmit}>
               <label htmlFor="name">Name: </label>
-              <input type="text" name="name" placeholder="Your name goes here" onChange={handleChange} />
+              <input type="text" name="name" placeholder="Your name goes here" onChange={handleChange} /><br/>
 
-              <label htmlFor="duration">Duration</label>
-              <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleChange} />
+              <label htmlFor="duration">Duration</label><br/>
+              <input type="" name="duration" placeholder="How long was your hike in minutes?" onChange={handleChange} /><br/>
 
               {/* <label htmlFor="weather">What was the weather like? </label>
                 <input type="radio" name="weather" value="sunny" onChange={e=>setWeather(e.target.value)}/><p>Sunny</p>
@@ -101,8 +106,8 @@ const AddHikeComment = (props) => {
                 </textarea>
 {/* add radios with the booleans here */}
 
-              <label htmlFor="photo">Photo: </label>
-              <input type="text" name="photo" />
+              {/* <label htmlFor="photo">Photo: </label>
+              <input type="text" name="photo" /> */}
               {/* do I want to set up drag and drop here? */}
 
               <input type="submit" />
