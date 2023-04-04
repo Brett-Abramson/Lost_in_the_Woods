@@ -22,6 +22,7 @@ const HikeShowPage = (props) => {
       setHikeComment(newHikeComment)
     })
   }
+  
 
   return (
 
@@ -73,7 +74,9 @@ const HikeShowPage = (props) => {
             <div className="edit-Hike">
             </div>
           </div>
-          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} handleEditHike={props.handleEdit} id="add-comment-button" />
+
+          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} handleEditHike={props.handleEditHike} hike={props.hike} id="add-comment-button"  />
+
 {/* {props.hikeComment((sub) =>
 <> */}
           {/* <div className="comment-section"> */}

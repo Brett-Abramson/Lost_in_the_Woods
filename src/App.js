@@ -149,11 +149,11 @@ const showHikePage = () => {
  <Home />
  </div>
       <div className={hidden2}>
-              <Camp  camps={camps} handleDelete={handleDeleteCamp}/>
+              <Camp  camps={camps} handleDelete={handleDeleteCamp} handleEditCamp={handleEditCamp} />
       </div>
 
       <div className={hidden3}>
-              <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} handleShow={handleShowHike}/>
+              <HikeIndex hikes={hikes} handleDelete={handleDeleteHike} handleShow={handleShowHike} handleEditHike={handleEditHike}/>
          
       </div>
       {/* <AddHike handleCreate={handleCreateHike}/> */}

@@ -174,7 +174,9 @@ const AddHike = (props) => {
                 <label htmlFor="description">Description</label><br/>
                 <textarea className="add-description" type="text" name="description" id="decsription" rows="4" cols="50" placeholder="Tell us about the hike. What is the terrain like? What did you like about it? What should others know?" onChange={handleChange} />
                 <br />
-                <button className="submit-button" onClick={props.toggleAddCamp} type="submit">Add Hike</button>
+                <div onClick={props.toggleAddCamp}>
+                    <button className="submit-button" onClick={props.toggleAddHike} type="submit">Add Hike</button>
+                </div>
             </form>
             
             </div>
