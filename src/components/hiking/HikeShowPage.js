@@ -3,6 +3,8 @@ import axios from "axios"
 import {useState} from "react"
 
 import "../../style/index.css"
+import "../../style/home.css"
+
 
 import AddHikeComment from "./add-comment"
 
@@ -36,20 +38,19 @@ const HikeShowPage = (props) => {
       </div>
 
       <div className="flex-container-row">
-        <div className="right-side-page-info">
+        {/* <div className="right-side-page-info">
           <h3>Parking Details</h3>
           <p>{props.hike.parking}</p>
-          {/* need to get the other hikes to render here */}
-        </div>
+        </div> */}
 
         <div className="left-side-page-info">
           <div className="basic-info">
-          <div>
+          <div className="show-hike-stats">
             <p>Distance </p>
             <p>{props.hike.distance}</p>
             </div>
 
-          <div>
+          <div className="show-hike-stats">
             <p>Elevation gain </p>
             <p>{props.hike.elevationGain}</p>
           </div>
@@ -57,6 +58,8 @@ const HikeShowPage = (props) => {
             <p>Duration </p>
             <p>{props.hike.duration}</p>
             </div>
+          </div>
+          </div>
           </div>
 
           <div className="tags">
@@ -135,8 +138,7 @@ const HikeShowPage = (props) => {
 )} */}
 
         </div>
-      </div>
-    </div>
+
     </main>
   );
 };

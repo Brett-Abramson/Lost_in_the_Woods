@@ -113,13 +113,24 @@
     }
   }
 
+
   @media screen and (max-width: 700px) {
     .nav-title {
-      margin-left: 10%;
+      margin-left: 40%;
 
     }
 
     .nav-links {
-      margin-left: -20%;
+      margin-left: 10%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .nav-title {
+      margin-left: 35%;
+
+    }
+
+    .nav-links {
+      margin-left: 5%;
     }
   }

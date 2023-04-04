@@ -210,7 +210,8 @@ input[type=text], .input-field {
     flex-wrap: wrap;
     flex-direction: row;
     flex-direction: row-reverse;
-    justify-content: space-between;
+
+    /* justify-content: space-between; */
 }
 
 .hike-info{
@@ -224,8 +225,12 @@ input[type=text], .input-field {
 .basic-info{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 width: 150%;
+}
+
+.show-hike-stats{
+    margin-right: 15%;
 }
 
 
@@ -295,7 +300,21 @@ max-width: 300px;
     }
 }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
+    .card-container{
+      display: grid;
+      grid-template-columns: auto;
+      padding: 10px 30px;
+    }
+    #show-hike-name {
+        font-size: 2em;
+        word-wrap: break-word;
+    
+    }
+
+  }
+
+  @media screen and (max-width: 700px) {
     .card-container{
       display: grid;
       grid-template-columns: auto;
