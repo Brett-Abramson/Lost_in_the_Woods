@@ -1,4 +1,5 @@
 import "../../style/index.css"
+
 import HikeShowPage from "./HikeShowPage"
 import AddHike from "../hiking/add"
 import {useState} from "react"
@@ -62,7 +63,9 @@ const HikeIndex = (props) => {
                 <p>Pet Friendly</p>
                 </div>
                 </nav>
+
                 <hr id="hr-below-bar-hike"/>
+
                 <div className="card-container">
                     {props.hikes.map((hike, index) => {
                         return (
@@ -73,7 +76,6 @@ const HikeIndex = (props) => {
 
                                 <div className="card-image" >
                                 <img id="index-photo" src={hike.photo} alt={"picture of " + hike.name} />
-
                                 </div>
                                 <div className="card-text">
                                 <p className="card-name" >{hike.name}</p>

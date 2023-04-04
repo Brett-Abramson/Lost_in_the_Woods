@@ -1,5 +1,5 @@
 import "../../style/index.css"
-import "../../style/home.css"
+// import "../../style/home.css"
 import Camping from "./show"
 import AddCamp from "../camping/add"
 
@@ -30,8 +30,9 @@ const Camp = (props) => {
         <>
         {/* <div className="page-container"> */}
         <main>
-            
-                <hr id="hr-above-bar"/>
+        <div className="no-this-is-a-column">
+        
+                <hr id="hr-above-bar-hike"/>
                 <nav className="navbar-camp">
                 <div className="nav-bar-photo-and-text" id="hiker-background">
                 <img src="https://i.imgur.com/dwHSPgj.png" alt="hiking man" id="hiker"/>
@@ -66,20 +67,21 @@ const Camp = (props) => {
                 </div>
     
                 </nav>
-                <hr id="hr-below-bar"/>
+                <hr id="hr-below-bar-hike"/>
             
                 <div className="card-container">
                     {props.camps.map((camp, index) => {
                         return (
                             <div className="card">
-                                <div className="card-image">
+                                
                                 <button className="delete-button" onClick={()=>{props.handleDelete(camp)}}>X</button><br/>
-                                    <img src={camp.photo} alt={"picture of " + camp.name} />
+                                <div className="card-image">
+                                    <img src={camp.photo} alt={"picture of " + camp.name} id="index-photo"/>
                                 </div>
                                 <div className="card-text">
                                     <h3 className="card-name">{camp.name}</h3>
-                                    <p>{camp.location}</p>
-                                    <p>{camp.campType}</p>
+                                    <p className="card-details">{camp.location}</p>
+                                    <p className="card-details">{camp.campType}</p>
                                     <p>{camp.easeOfBooking}</p>
                                 </div>
                                 <button className="see-show-button" onClick={()=> {
@@ -98,8 +100,11 @@ const Camp = (props) => {
                     })}
                 </div>
                 {showCamp[i] && <Camping camp={props.camps[i]} handleEditCamp={props.handleEditCamp} />}
+         
+          </div>
             </main>
         {/* </div> */}
+        
         </>
     )
 }
