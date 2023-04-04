@@ -3,11 +3,11 @@ import "../../style/index.css"
 const Camping = (props) => {
     return (
       <div className="show-page">
-        <div className="header">
-          <img src={props.camp.image} alt="camp" />
-          <h1>{props.camp.name}</h1>
-          <h4>{props.camp.location}</h4>
-          <h4>{props.camp.campType}</h4>
+        <div className="hike-info">
+          <img id="show-page-photo" src={props.camp.photo} alt="camp" />
+          <h1 id="show-hike-name">{props.camp.name}</h1>
+          <h4 id="show-hike-location">{props.camp.location}</h4>
+          <h4 id="show-hike-difficulty">{props.camp.campType}</h4>
         </div>
   
         <div className="flex-container-row">
