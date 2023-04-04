@@ -28,10 +28,10 @@ const HikeShowPage = (props) => {
 <main>
 <div className="no-this-is-a-column">
       <div className="hike-info">
-        <img src={props.hikes.image} alt="hikes" />
-        <h1>{props.hike.name}</h1>
-        <h4>{props.hike.location}</h4>
-        <h4>{props.hike.difficulty}</h4>
+      <img id="show-page-photo" src={props.hike.photo} alt={"picture of " + props.hike.name} />
+        <h1 id="show-hike-name">{props.hike.name}</h1>
+        <h4 id="show-hike-location">{props.hike.location}</h4>
+        <h4 id="show-hike-difficulty">{props.hike.difficulty} Challenge</h4>
       </div>
 
       <div className="flex-container-row">
@@ -43,9 +43,19 @@ const HikeShowPage = (props) => {
 
         <div className="left-side-page-info">
           <div className="basic-info">
-            <p>Distance {props.hike.distance}</p>
-            <p>Elevation gain {props.hike.elevationGain}</p>
-            <p>Duration {props.hike.duration}</p>
+          <div>
+            <p>Distance </p>
+            <p>{props.hike.distance}</p>
+            </div>
+
+          <div>
+            <p>Elevation gain </p>
+            <p>{props.hike.elevationGain}</p>
+          </div>
+          <div>
+            <p>Duration </p>
+            <p>{props.hike.duration}</p>
+            </div>
           </div>
 
           <div className="tags">
@@ -63,7 +73,7 @@ const HikeShowPage = (props) => {
             <div className="edit-Hike">
             </div>
           </div>
-          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} handleEditHike={props.handleEdit}  />
+          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} handleEditHike={props.handleEdit} id="add-comment-button" />
 {/* {props.hikeComment((sub) =>
 <> */}
           {/* <div className="comment-section"> */}
