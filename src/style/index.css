@@ -88,6 +88,9 @@ input[type=text], .input-field {
     font-size: 15px;
     line-height: 15px;
     font-family: 'Halant', sans-serif;
+    display: flex;
+    flex-direction: column;
+
 }
 
 #hr-above-bar {
@@ -185,6 +188,45 @@ input[type=text], .input-field {
 #pets{
     width:100px;
     height:60px;
+}
+
+.flex-container-row{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+}
+
+.hike-info{
+    line-height: .5vh;
+}
+
+
+.basic-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+width: 150%;
+}
+
+#show-hike-name {
+    font-size: 5em;
+}
+
+#show-hike-location{
+    font-size:2em
+}
+
+#show-hike-difficulty{
+    font-size:2em
+}
+
+#index-photo{
+    width:100px;
+    height: 100px;
 }
 
 

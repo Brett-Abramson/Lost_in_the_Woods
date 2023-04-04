@@ -17,6 +17,7 @@ main {
   display: flex;
   margin-left: 10%;
   flex-direction: column;
+  
 }
 
 
@@ -27,8 +28,6 @@ main {
   flex-direction: column;
 }
 
-.right-side{
-}
 
 .home-add-buttons {
   display: flex;
