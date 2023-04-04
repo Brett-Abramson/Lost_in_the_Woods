@@ -12,9 +12,10 @@
 
 .nav-title {
   width: 50%;
-  margin-left: 19%;
+  margin-left: 10%;
   font-size: 4vh;
   font-weight: bold;
+  color: #7FAE8F;
 }
 
 .nav-links {
@@ -83,7 +84,7 @@
       width: 100%;
       font-size: 4vh;
       font-weight: bold;
-      margin-left: 14%;
+      margin-left: 10%;
     }
     .nav-links {
       width: 70%;

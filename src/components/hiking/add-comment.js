@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const AddHikeComment = (props) => {
   const [addComment, setAddComment] = useState(false);
-  // const [weather, setWeather]=useState()
 
   const [comments, setComment] = useState({
       photo: "",
@@ -18,12 +17,6 @@ const AddHikeComment = (props) => {
   };
 
 
-  ///this is for the buttons
-  // const handleCommentChange = (event) => {
-  //   setComment({ 
-  //     ...comments, 
-  //     [event.target.name]: event.target.value });
-  // };
 
   const handlePhotoChange = (event) => {
     setComment({

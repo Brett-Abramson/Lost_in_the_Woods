@@ -28,10 +28,10 @@ const HikeShowPage = (props) => {
 <main>
 <div className="no-this-is-a-column">
       <div className="hike-info">
-      <img src={props.hike.photo} alt={"picture of " + props.hike.name} />
+      <img id="show-page-photo" src={props.hike.photo} alt={"picture of " + props.hike.name} />
         <h1 id="show-hike-name">{props.hike.name}</h1>
         <h4 id="show-hike-location">{props.hike.location}</h4>
-        <h4 id="show-hike-difficulty">{props.hike.difficulty}</h4>
+        <h4 id="show-hike-difficulty">{props.hike.difficulty} Challenge</h4>
       </div>
 
       <div className="flex-container-row">
@@ -73,7 +73,7 @@ const HikeShowPage = (props) => {
             <div className="edit-Hike">
             </div>
           </div>
-          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} handleEditHike={props.handleEdit}  />
+          <AddHikeComment handleCreateHikeComment={handleCreateHikeComment} handleEditHike={props.handleEdit} id="add-comment-button" />
 {/* {props.hikeComment((sub) =>
 <> */}
           {/* <div className="comment-section"> */}

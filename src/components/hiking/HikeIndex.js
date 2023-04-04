@@ -72,19 +72,19 @@ const HikeIndex = (props) => {
                             <div className="card">
                             {/* only show the one we want to show */}
                             {/* {showHike[index] && <HikeShowPage hike={hike} />} */}
-                                <div className="card-image">
-                                <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
-                                </div>
-                                <div className="card-text">
+                            <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
+
+                                <div className="card-image" >
                                 <img id="index-photo" src={hike.photo} alt={"picture of " + hike.name} />
 
+                                </div>
+                                <div className="card-text">
                                 <p className="card-name" >{hike.name}</p>
-                                    <p >best features here</p>
-                                    <p>{hike.difficulty}</p>
-                                    <p>{hike.distance} miles</p>
+                                    <p className="card-details">{hike.difficulty} difficulty</p>
+                                    <p className="card-details">{hike.distance} miles</p>
                                 </div>
                             {/* <HikeShowPage hike={hike}/> */}
-                            <button onClick={()=> {
+                            <button className="see-show-button" onClick={()=> {
                                     // this is saying set your show variable  to be true or false
                                     // copying the array of boolean variables
                                     const newShowHike = [...showHike]
@@ -95,7 +95,7 @@ const HikeIndex = (props) => {
                                     setI(index)
                                 }}>
                                 {/* only change the button of the one we want to change */}
-                                {showHike[index] ? "Hide" : "Show"}
+                                {showHike[index] ? "Hide Details" : "Show"}
                             </button>
                             </div>
                         )

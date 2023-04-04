@@ -10,14 +10,12 @@ main {
 
 .no-this-is-a-column{
   flex-direction: column;
-  width: 90%;
+  width: 80%;
 }
 
 .home-page {
   display: flex;
-  margin-left: 10%;
-  flex-direction: column;
-  
+  margin-left: 10%;  
 }
 
 
