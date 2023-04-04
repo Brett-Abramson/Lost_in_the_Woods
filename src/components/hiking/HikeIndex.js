@@ -70,7 +70,21 @@ const HikeIndex = (props) => {
                     {props.hikes.map((hike, index) => {
                         return (
                             <div className="card">
-                                <button onClick={()=> {
+                            {/* only show the one we want to show */}
+                            {/* {showHike[index] && <HikeShowPage hike={hike} />} */}
+                                <div className="card-image">
+                                <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
+                                </div>
+                                <div className="card-text">
+                                <img id="index-photo" src={hike.photo} alt={"picture of " + hike.name} />
+
+                                <p className="card-name" >{hike.name}</p>
+                                    <p >best features here</p>
+                                    <p>{hike.difficulty}</p>
+                                    <p>{hike.distance} miles</p>
+                                </div>
+                            {/* <HikeShowPage hike={hike}/> */}
+                            <button onClick={()=> {
                                     // this is saying set your show variable  to be true or false
                                     // copying the array of boolean variables
                                     const newShowHike = [...showHike]
@@ -83,19 +97,6 @@ const HikeIndex = (props) => {
                                 {/* only change the button of the one we want to change */}
                                 {showHike[index] ? "Hide" : "Show"}
                             </button>
-                            {/* only show the one we want to show */}
-                            {/* {showHike[index] && <HikeShowPage hike={hike} />} */}
-                                <div className="card-image">
-                                <button className="delete-button" onClick={()=>{props.handleDelete(hike)}}>X</button>
-                                    <img src="" alt={"picture of " + hike.name} />
-                                </div>
-                                <div className="card-text">
-                                <a className="card-name" href="/hiking/{hike._id}">{hike.name}</a>
-                                    <p >best features here</p>
-                                    <p>{hike.difficulty}</p>
-                                    <p>{hike.distance} miles</p>
-                                </div>
-                            {/* <HikeShowPage hike={hike}/> */}
                             </div>
                         )
                     })}
